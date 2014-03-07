@@ -5,31 +5,14 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Fri Mar  7 20:33:05 2014 guerot_a
-** Last update Fri Mar  7 21:31:34 2014 guerot_a
+** Last update Fri Mar  7 21:43:53 2014 guerot_a
 */
 
-#define _POSIX_C_SOURCE
-#define _XOPEN_SOURCE
-
-#include <stdio.h>
-#include <stdlib.h>
+#include "epikong.h"
 
 /*
 ** Cast define for xfree
 */
-#define xfree(ptr)	_xfree((void**)ptr)
-
-void	_xfree(void** ptr)
-{
-  free(*ptr);
-  *ptr = NULL;
-}
-
-void	xabort(char *str)
-{
-  fprintf(stderr, "%s\n", str);
-  exit(EXIT_FAILURE);
-}
 
 void	epikong(char* filename)
 {

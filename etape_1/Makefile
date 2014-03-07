@@ -5,7 +5,7 @@
 ## Login   <guerot_a@epitech.net>
 ## 
 ## Started on  Sun Mar  2 18:06:05 2014 anthony guerot
-## Last update Fri Mar  7 20:45:46 2014 guerot_a
+## Last update Fri Mar  7 21:44:09 2014 guerot_a
 ##
 
 ## FILES
@@ -13,6 +13,8 @@
 NAME		=	epikong
 
 SRC		=	main		\
+			xabort		\
+			xfree
 
 SRC_EXT		=	.c
 
