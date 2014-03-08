@@ -5,49 +5,22 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Fri Mar  7 20:33:05 2014 guerot_a
-** Last update Sat Mar  8 12:50:52 2014 guerot_a
+** Last update Sat Mar  8 13:53:19 2014 guerot_a
 */
 
 #include "epikong.h"
 
-#define CASE_SIZE 16
-
-void	draw_sprite_aligned(SDL_Surface* sprite, int x_case,
-			    int y_case, SDL_Surface* screen)
-{
-  SDL_Rect	rect;
-
-  rect.x = CASE_SIZE * x_case;
-  rect.y = CASE_SIZE * y_case;
-  SDL_BlitSurface(sprite, NULL, screen, &rect);
-}
-
-void	draw_map(t_map* map, SDL_Surface* screen)
-{
-  unsigned int	x;
-  unsigned int	y;
-
-  y = 0;
-  while (y < map->height)
-    {
-      x = 0;
-      while (x < map->width)
-	{
-	  draw_sprite_aligned(get_sprite_by_char(map->data[y][x]), x, y, screen);
-	  x++;
-	}
-      y++;
-    }
-}
-
 void	epikong(char* filename)
 {
   t_map		map;
+  t_objlist	objlist;
   SDL_Surface*	screen;
   SDL_Event	event;
   int		still;
 
+  memset(&objlist, 0, sizeof(t_objlist));
   load_map(filename, &map);
+  load_gameobject(&map, &objlist);
   load_sprites();
 
   SDL_Init(SDL_INIT_VIDEO);
@@ -61,6 +34,7 @@ void	epikong(char* filename)
 	still = 0;
       SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
       draw_map(&map, screen);
+      /* draw_gameobject(&objlist, screen); */
       SDL_Flip(screen);
     }
 }

@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 12:52:55 2014 guerot_a
-** Last update Sat Mar  8 13:11:06 2014 guerot_a
+** Last update Sat Mar  8 13:50:36 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -97,7 +97,7 @@ void		verif_map(t_map *map)
   if (mapval[0] != 1 || mapval[1] != 1 || mapval[2] != 1)
     {
       fprintf(stderr,
-	      "error: invalid map: too many item of one type (%d-%d-%d)\n",
+	      "error: error with game items (%d-%d-%d)\n",
 	      mapval[0], mapval[1], mapval[2]);
       exit(EXIT_FAILURE);
     }

@@ -5,7 +5,7 @@
 ## Login   <guerot_a@epitech.net>
 ## 
 ## Started on  Sun Mar  2 18:06:05 2014 anthony guerot
-## Last update Sat Mar  8 12:58:40 2014 guerot_a
+## Last update Sat Mar  8 14:05:12 2014 guerot_a
 ##
 
 ## FILES
@@ -24,7 +24,9 @@ SRC		=	main		\
 			load_map	\
 			load_sprites	\
 			sprite_pair	\
-			check_load_map
+			check_load_map	\
+			load_gameobject	\
+			draw
 
 
 SRC_EXT		=	.c
@@ -113,6 +115,7 @@ LDFLAGS		+=	$(LIBS)
 ## MISC RULES
 
 SD_SRC		= $(shell cd $(DSRC) && find . -type d | uniq)
+SD_TMP		= $(shell find . -name "*~")
 MAKEOBJ		= $(addprefix $(DOBJ), %.o) : $(addprefix $(addprefix $(DSRC), %), $(SRC_EXT))
 
 all:	$(CNAME)
@@ -126,7 +129,7 @@ $(CNAME):	$(COBJ)
 
 $(COBJ):	$(MAKEOBJ)
 		@$(MD) $(DOBJ)
-		@for dir in $(SD_SRC); \
+		@for dir in $(SD_SRCx); \
 		do \
 		if [ ! -d "$(DOBJ)$$dir" ];then \
 			$(MD) $(DOBJ)$$dir; \
@@ -135,7 +138,14 @@ $(COBJ):	$(MAKEOBJ)
 		@echo "Compilation : $<"
 		@$(CC) -c $< -o $@ $(CFLAGS)
 
-clean:
+cleantmp:
+		@echo "Deleting tmp files"
+		@for file in $(SD_TMP); \
+		do \
+		$(RM) $$file; \
+		done
+
+clean:		cleantmp
 		@echo "Deleting obj files"
 		@$(RM) $(COBJ)
 
