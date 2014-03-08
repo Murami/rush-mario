@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 00:11:15 2014 guerot_a
-** Last update Sat Mar  8 14:12:57 2014 guerot_a
+** Last update Sat Mar  8 17:21:52 2014 genes_k
 */
 
 #include "epikong.h"
@@ -25,7 +25,7 @@ void	load_sprites()
 {
   sprites[0].img = xSDL_LoadBMP("Sprites/Wall.bmp");
   sprites[1].img = xSDL_LoadBMP("Sprites/Ladder.bmp");
-  sprites[2].img = xSDL_LoadBMP("Sprites/Mario.bmp");
+  sprites[2].img = xSDL_LoadBMP("Sprites/Mario_1.bmp");
   sprites[3].img = xSDL_LoadBMP("Sprites/Turtle.bmp");
   sprites[4].img = xSDL_LoadBMP("Sprites/Key.bmp");
   sprites[5].img = xSDL_LoadBMP("Sprites/Exit.bmp");
