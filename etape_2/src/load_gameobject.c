@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 13:15:52 2014 guerot_a
-** Last update Sat Mar  8 16:48:29 2014 guerot_a
+** Last update Sat Mar  8 17:09:57 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -29,8 +29,6 @@ void	load_monster(int x, int y, t_objlist* objlist)
   monster = xmalloc(sizeof(t_monster));
   monster->pos_x = x;
   monster->pos_y = y;
-  if (objlist->monster_list == NULL)
-    objlist->monster_list = list_create();
   list_push_back(objlist->monster_list, monster);
 }
 
@@ -63,6 +61,7 @@ void	load_gameobject(t_map* map, t_objlist* objlist)
   unsigned int	y;
   unsigned int	x;
 
+  objlist->monster_list = list_create();
   y = 0;
   while (y < map->height)
     {

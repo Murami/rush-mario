@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 15:05:50 2014 guerot_a
-** Last update Sat Mar  8 17:04:15 2014 guerot_a
+** Last update Sat Mar  8 17:13:57 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -23,10 +23,6 @@ void	mario_physics(t_map* map, t_objlist* objlist)
   speed_fall = objlist->player.speed_fall;
   if (mario_can_walk(map, x, y))
     return;
-  speed_fall *= speed_fall;
-  objlist->player.speed_fall = speed_fall;
-  if (speed_fall > 16)
-    speed_fall = 16;
   while (!mario_can_walk(map, x, y) && speed_fall)
     {
       y++;
@@ -35,6 +31,9 @@ void	mario_physics(t_map* map, t_objlist* objlist)
   if (mario_can_walk(map, x, y))
     objlist->player.speed_fall = 1;
   objlist->player.pos_y = y;
+  objlist->player.speed_fall *= objlist->player.speed_fall;
+  if (objlist->player.speed_fall == 1)
+    objlist->player.speed_fall = 2;
   objlist->player.direction = DIR_NONE;
 }
 
