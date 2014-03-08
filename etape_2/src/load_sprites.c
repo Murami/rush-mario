@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 00:11:15 2014 guerot_a
-** Last update Sat Mar  8 12:49:10 2014 guerot_a
+** Last update Sat Mar  8 14:12:57 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -15,7 +15,7 @@ t_spritepair sprites[] =
     {'w', "Wall", NULL},
     {'s', "Ladder", NULL},
     {'i', "Mario", NULL},
-    {'m', "Turtle", NULL},
+    {'m', "Monster", NULL},
     {'k', "Key", NULL},
     {'o', "Exit", NULL},
     {'\0', "", NULL}

@@ -5,7 +5,7 @@
 ## Login   <guerot_a@epitech.net>
 ## 
 ## Started on  Sun Mar  2 18:06:05 2014 anthony guerot
-## Last update Sat Mar  8 14:05:12 2014 guerot_a
+## Last update Sat Mar  8 15:09:44 2014 guerot_a
 ##
 
 ## FILES
@@ -26,7 +26,11 @@ SRC		=	main		\
 			sprite_pair	\
 			check_load_map	\
 			load_gameobject	\
-			draw
+			draw		\
+			manage_event	\
+			manage_ia	\
+			manage_physic	\
+			mario
 
 
 SRC_EXT		=	.c

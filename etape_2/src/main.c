@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Fri Mar  7 20:33:05 2014 guerot_a
-** Last update Sat Mar  8 13:53:19 2014 guerot_a
+** Last update Sat Mar  8 15:07:54 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -15,7 +15,6 @@ void	epikong(char* filename)
   t_map		map;
   t_objlist	objlist;
   SDL_Surface*	screen;
-  SDL_Event	event;
   int		still;
 
   memset(&objlist, 0, sizeof(t_objlist));
@@ -29,12 +28,12 @@ void	epikong(char* filename)
   still = 1;
   while (still)
     {
-      SDL_WaitEvent(&event);
-      if (event.type == SDL_QUIT)
-	still = 0;
+      still = manage_event(&map, &objlist);
+      manage_physics(&map, &objlist);
+      manage_ia(&map, &objlist);
       SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
       draw_map(&map, screen);
-      /* draw_gameobject(&objlist, screen); */
+      draw_gameobject(&objlist, screen);
       SDL_Flip(screen);
     }
 }
