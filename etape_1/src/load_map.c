@@ -5,10 +5,36 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 00:02:15 2014 guerot_a
-** Last update Sat Mar  8 02:27:40 2014 guerot_a
+** Last update Sat Mar  8 02:39:22 2014 guerot_a
 */
 
 #include "epikong.h"
+
+char	valid_char[] =
+  {
+    '.',
+    'o',
+    'w',
+    'k',
+    'i',
+    's',
+    'm',
+    '\0'
+  };
+
+static void	test_valid_char(char key)
+{
+  int		i;
+
+  i = 0;
+  while (valid_char[i])
+    {
+      if (valid_char[i] == key)
+	return;
+      i++;
+    }
+  xabort("error: invalid map");
+}
 
 static void	check_line_wall(char *str)
 {
@@ -60,6 +86,7 @@ static void	verif_map(t_map *map)
       while (x < map->width)
 	{
 	  update_verif(mapkey, mapval, map->data[y][x]);
+	  test_valid_char(map->data[y][x]);
 	  x++;
 	}
       y++;
@@ -99,7 +126,11 @@ void	load_map(char *filename, t_map* map)
 
   list = load_file(filename);
   map->height = list_size(list);
+  if (!map->height)
+    xabort("error: invalid map");
   map->width = strlen(list->next->data);
+  if (!map->width)
+    xabort("error: invalid map");
   map->data = xmalloc((map->width + 1) * sizeof(char*));
   it = list_begin(list);
   i = 0;
