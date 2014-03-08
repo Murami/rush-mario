@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 15:07:11 2014 guerot_a
-** Last update Sat Mar  8 22:06:31 2014 guerot_a
+** Last update Sat Mar  8 23:50:56 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -42,7 +42,6 @@ void    bot_right(t_map* map, t_monster *data)
   unsigned int  x;
   unsigned int  y;
 
-
   x = data->pos_x;
   y = data->pos_y;
   if (!bot_can_walk(map, x + 1, y) || map->data[y][x + 1] == 'w'
@@ -69,9 +68,9 @@ void	manage_ia(t_map* map, t_objlist* objlist)
       if (time - data->lasttime_walk > PERIOD_WALK)
 	{
 	  if (data->direction == DIR_RIGHT)
-	    bot_right(map,data);
+	    bot_right(map, data);
 	  else if (data->direction == DIR_LEFT)
-	    bot_left(map,data);
+	    bot_left(map, data);
 	  data->lasttime_walk = time;
 	}
       it_incr(it);
