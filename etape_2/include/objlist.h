@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 13:21:49 2014 guerot_a
-** Last update Sat Mar  8 13:35:48 2014 guerot_a
+** Last update Sat Mar  8 15:15:04 2014 guerot_a
 */
 
 #ifndef OBJLIST_H
@@ -16,6 +16,10 @@
 /*
 ** Game objects
 */
+
+# define DIR_RIGHT	0
+# define DIR_LEFT	1
+
 
 typedef struct	s_mario
 {
@@ -35,6 +39,7 @@ typedef struct	s_monster
 {
   int		pos_x;
   int		pos_y;
+  int		direction;
 }		t_monster;
 
 typedef struct	s_objlist
