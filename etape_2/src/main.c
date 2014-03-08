@@ -5,11 +5,11 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Fri Mar  7 20:33:05 2014 guerot_a
-** Last update Sat Mar  8 16:50:14 2014 guerot_a
+** Last update Sat Mar  8 17:01:56 2014 guerot_a
 */
 
 #include "epikong.h"
-#define PERIOD_FPS	(1 / 50)
+#define PERIOD_FPS	(1000 / 50)
 
 SDL_Surface*	epikong_init(char* filename, t_map* map, t_objlist* objlist)
 {

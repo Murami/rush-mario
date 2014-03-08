@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 15:05:50 2014 guerot_a
-** Last update Sat Mar  8 16:56:18 2014 guerot_a
+** Last update Sat Mar  8 17:04:15 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -35,6 +35,7 @@ void	mario_physics(t_map* map, t_objlist* objlist)
   if (mario_can_walk(map, x, y))
     objlist->player.speed_fall = 1;
   objlist->player.pos_y = y;
+  objlist->player.direction = DIR_NONE;
 }
 
 void	manage_physics(t_map* map, t_objlist* objlist)

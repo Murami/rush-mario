@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 14:57:21 2014 guerot_a
-** Last update Sat Mar  8 14:57:42 2014 guerot_a
+** Last update Sat Mar  8 17:00:59 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -28,6 +28,7 @@ void	mario_left(t_map* map, t_objlist* objlist)
   if (!mario_can_walk(map, x, y) || map->data[y][x - 1] == 'w')
     return;
   objlist->player.pos_x = x - 1;
+  objlist->player.direction = DIR_LEFT;
 }
 
 void	mario_right(t_map* map, t_objlist* objlist)
@@ -41,6 +42,7 @@ void	mario_right(t_map* map, t_objlist* objlist)
   if (!mario_can_walk(map, x, y) || map->data[y][x + 1] == 'w')
     return;
   objlist->player.pos_x = x + 1;
+  objlist->player.direction = DIR_RIGHT;
 }
 
 void	mario_up(t_map* map, t_objlist* objlist)
@@ -54,6 +56,7 @@ void	mario_up(t_map* map, t_objlist* objlist)
   if (map->data[y][x] != 's')
     return;
   objlist->player.pos_y = y - 1;
+  objlist->player.direction = DIR_UP;
 }
 
 void	mario_down(t_map* map, t_objlist* objlist)
@@ -67,6 +70,7 @@ void	mario_down(t_map* map, t_objlist* objlist)
   if (map->data[y][x] != 's')
     return;
   objlist->player.pos_y = y;
+  objlist->player.direction = DIR_DOWN;
 }
 
 /* void	mario_jump() */
