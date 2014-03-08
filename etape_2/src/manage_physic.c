@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 15:05:50 2014 guerot_a
-** Last update Sat Mar  8 23:34:52 2014 SADOWSKI Geoffroy
+** Last update Sun Mar  9 00:02:53 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -85,10 +85,8 @@ void	mario_jumping_right(t_map* map, t_objlist* objlist)
       return;
     }
   objlist->player.pos_x++;
-  if (map->data[y][x + 1] == 's')
-    objlist->player.jumping = NOT_JUMPING;
-  else
-    objlist->player.jumping++;
+  objlist->player.jumping = (map->data[y][x + 1] == 's') ?
+    NOT_JUMPING : objlist->player.jumping + 1;
 }
 
 void	mario_jumping_left(t_map* map, t_objlist* objlist)
@@ -115,10 +113,8 @@ void	mario_jumping_left(t_map* map, t_objlist* objlist)
       return;
     }
   objlist->player.pos_x--;
-  if (map->data[y][x - 1] == 's')
-    objlist->player.jumping = NOT_JUMPING;
-  else
-    objlist->player.jumping++;
+  objlist->player.jumping = (map->data[y][x - 1] == 's') ?
+    NOT_JUMPING : objlist->player.jumping + 1;
 }
 
 void	mario_jumping(t_map* map, t_objlist* objlist)

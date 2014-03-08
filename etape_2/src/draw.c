@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 13:52:17 2014 guerot_a
-** Last update Sat Mar  8 23:32:47 2014 SADOWSKI Geoffroy
+** Last update Sat Mar  8 23:58:31 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -42,33 +42,23 @@ void	draw_mario(t_mario* mario, SDL_Surface* screen)
 {
   if (mario->jumping != NOT_JUMPING)
     {
-      if (mario->direction_jump == DIR_LEFT)
+      if (mario->direction_jump == DIR_LEFT ||
+	  mario->direction == DIR_LEFT)
 	draw_sprite_aligned(get_sprite_by_str("MarioJump"),
-			    mario->pos_x, mario->pos_y,
-			    screen);
-      else if (mario->direction_jump == DIR_RIGHT)
+			    mario->pos_x, mario->pos_y, screen);
+      else if (mario->direction_jump == DIR_RIGHT ||
+	       mario->direction == DIR_RIGHT)
         draw_sprite_aligned(get_sprite_by_str("MarioJumpBack"),
-                            mario->pos_x, mario->pos_y,
-                            screen);
-      else if (mario->direction == DIR_LEFT)
-	draw_sprite_aligned(get_sprite_by_str("MarioJump"),
-			    mario->pos_x, mario->pos_y,
-			    screen);
-      else if (mario->direction == DIR_RIGHT)
-        draw_sprite_aligned(get_sprite_by_str("MarioJumpBack"),
-                            mario->pos_x, mario->pos_y,
-                            screen);
+                            mario->pos_x, mario->pos_y, screen);
     }
   else
     {
       if (mario->direction == DIR_LEFT)
 	draw_sprite_aligned(get_sprite_by_str("Mario"),
-			    mario->pos_x, mario->pos_y,
-			    screen);
+			    mario->pos_x, mario->pos_y, screen);
       else if (mario->direction == DIR_RIGHT)
         draw_sprite_aligned(get_sprite_by_str("MarioBack"),
-                            mario->pos_x, mario->pos_y,
-                            screen);
+                            mario->pos_x, mario->pos_y, screen);
     }
 }
 

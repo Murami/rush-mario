@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 15:01:46 2014 guerot_a
-** Last update Sat Mar  8 22:34:08 2014 guerot_a
+** Last update Sat Mar  8 23:59:16 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -68,8 +68,10 @@ static void	clear_events()
   i = 0;
   while (events[i].func)
     {
-      events[i].pressed = (events[i].pressed - events[i].released > 0) ? 1 : events[i].pressed == 1;
-      events[i].released = (events[i].released - events[i].pressed > 0) ? 1 : events[i].released == 1;
+      events[i].pressed = (events[i].pressed - events[i].released > 0) ?
+	1 : events[i].pressed == 1;
+      events[i].released = (events[i].released - events[i].pressed > 0) ?
+	1 : events[i].released == 1;
       if ((events[i].pressed && !events[i].released && !events[i].active) ||
 	  (!events[i].pressed && events[i].released && events[i].active))
 	events[i].active = !events[i].active;
