@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 13:15:52 2014 guerot_a
-** Last update Sat Mar  8 13:48:46 2014 guerot_a
+** Last update Sat Mar  8 17:09:57 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -16,6 +16,8 @@ void	load_mario(int x, int y, t_objlist* objlist)
   objlist->player.pos_x = x;
   objlist->player.pos_y = y;
   objlist->player.equiped = 0;
+  objlist->player.speed_fall = 1;
+  objlist->player.lasttime_fall = 0;
   objlist->spawn.pos_x = x;
   objlist->spawn.pos_y = y;
 }
@@ -27,8 +29,6 @@ void	load_monster(int x, int y, t_objlist* objlist)
   monster = xmalloc(sizeof(t_monster));
   monster->pos_x = x;
   monster->pos_y = y;
-  if (objlist->monster_list == NULL)
-    objlist->monster_list = list_create();
   list_push_back(objlist->monster_list, monster);
 }
 
@@ -61,6 +61,7 @@ void	load_gameobject(t_map* map, t_objlist* objlist)
   unsigned int	y;
   unsigned int	x;
 
+  objlist->monster_list = list_create();
   y = 0;
   while (y < map->height)
     {
