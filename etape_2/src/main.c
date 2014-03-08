@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Fri Mar  7 20:33:05 2014 guerot_a
-** Last update Sat Mar  8 21:38:29 2014 SADOWSKI Geoffroy
+** Last update Sat Mar  8 21:40:46 2014 SADOWSKI Geoffroy
 */
 
 #include "epikong.h"
@@ -28,7 +28,7 @@ int	manage_game(t_map* map, t_objlist* objlist)
   int	still;
 
   still = manage_event(map, objlist);
-  
+  manage_game_check(map, objlist);
   manage_physics(map, objlist);
   manage_ia(map, objlist);
   return (still);

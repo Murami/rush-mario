@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 13:15:52 2014 guerot_a
-** Last update Sat Mar  8 20:36:01 2014 guerot_a
+** Last update Sat Mar  8 21:45:03 2014 SADOWSKI Geoffroy
 ** Last update Sat Mar  8 18:27:30 2014 SADOWSKI Geoffroy
 */
 
@@ -22,6 +22,7 @@ void	load_mario(int x, int y, t_objlist* objlist)
   objlist->player.lasttime_jump = 0;
   objlist->player.jumping = NOT_JUMPING;
   objlist->player.direction = DIR_NONE;
+  objlist->player.key = 0;  
   objlist->spawn.pos_x = x;
   objlist->spawn.pos_y = y;
 }

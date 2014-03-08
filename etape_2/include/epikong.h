@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Fri Mar  7 21:47:03 2014 guerot_a
-** Last update Sat Mar  8 16:09:14 2014 guerot_a
+** Last update Sat Mar  8 21:42:00 2014 SADOWSKI Geoffroy
 */
 
 #ifndef EPIKONG_H
@@ -45,6 +45,8 @@ void	draw_gameobject(t_objlist* list, SDL_Surface* screen);
 int	manage_event(t_map* map, t_objlist* objlist);
 void	manage_physics(t_map* map, t_objlist* objlist);
 void	manage_ia(t_map* map, t_objlist* objlist);
+void    manage_game_check(t_map *map, t_objlist *objlist);
+
 
 int	mario_can_walk(t_map* map, int x, int y);
 void	mario_left(t_map* map, t_objlist* objlist);
