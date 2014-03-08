@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Fri Mar  7 20:33:05 2014 guerot_a
-** Last update Sat Mar  8 22:02:06 2014 guerot_a
+** Last update Sat Mar  8 22:05:49 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -27,6 +27,7 @@ int	manage_game(t_map* map, t_objlist* objlist)
   int	still;
 
   still = manage_event(map, objlist);
+  manage_game_check(map, objlist);
   manage_physics(map, objlist);
   manage_ia(map, objlist);
   return (still);
@@ -57,9 +58,9 @@ void	epikong(char* filename)
       still = manage_game(&map, &objlist);
       draw_game(&map, &objlist, screen);
       tmptime = SDL_GetTicks();
-      /* if (tmptime - lasttime < PERIOD_FPS) */
-      /* 	SDL_Delay(tmptime - lasttime); */
-      /* lasttime = tmptime; */
+      if (tmptime - lasttime < PERIOD_FPS)
+      	SDL_Delay(tmptime - lasttime);
+      lasttime = tmptime;
     }
 }
 

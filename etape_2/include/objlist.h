@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 13:21:49 2014 guerot_a
-** Last update Sat Mar  8 20:35:50 2014 guerot_a
+** Last update Sat Mar  8 21:44:14 2014 SADOWSKI Geoffroy
 */
 
 #ifndef OBJLIST_H
@@ -38,6 +38,7 @@ typedef struct	s_mario
   Uint32	lasttime_jump;
   int		direction;
   int		jumping;
+  int		key;
 }		t_mario;
 
 typedef struct	s_spawn

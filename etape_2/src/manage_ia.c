@@ -5,8 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 15:07:11 2014 guerot_a
-** Last update Sat Mar  8 22:01:39 2014 guerot_a
-** Last update Sat Mar  8 20:25:57 2014 SADOWSKI Geoffroy
+** Last update Sat Mar  8 22:06:31 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -17,6 +16,7 @@ int     bot_can_walk(t_map* map, int x, int y)
 {
   return (map->data[y + 1][x] == 'w' ||
           map->data[y + 1][x] == 's' ||
+          map->data[y + 1][x] == '7' ||
           map->data[y][x] == 's');
 }
 
@@ -27,7 +27,9 @@ void    bot_left(t_map* map, t_monster *data)
 
   x = data->pos_x;
   y = data->pos_y;
-  if (!bot_can_walk(map, x-1, y) || map->data[y][x - 1] == 'w')
+  if (!bot_can_walk(map, x - 1, y) || map->data[y][x - 1] == 'w'
+      || map->data[y][x - 1] == 'm' || map->data[y][x - 1] == '4'
+      || map->data[y][x - 1] == '5')
     {
       data->direction = DIR_RIGHT;
       return;
@@ -43,7 +45,9 @@ void    bot_right(t_map* map, t_monster *data)
 
   x = data->pos_x;
   y = data->pos_y;
-  if (!bot_can_walk(map, x+1, y) || map->data[y][x + 1] == 'w')
+  if (!bot_can_walk(map, x + 1, y) || map->data[y][x + 1] == 'w'
+      || map->data[y][x + 1] == 'm' || map->data[y][x + 1] == '4'
+      || map->data[y][x + 1] == '5')
     {
       data->direction = DIR_LEFT;
       return;

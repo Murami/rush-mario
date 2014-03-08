@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 14:57:21 2014 guerot_a
-** Last update Sat Mar  8 21:50:16 2014 guerot_a
+** Last update Sat Mar  8 22:06:52 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -14,6 +14,7 @@ int	mario_can_walk(t_map* map, int x, int y)
 {
   return (map->data[y + 1][x] == 'w' ||
 	  map->data[y + 1][x] == 's' ||
+	  map->data[y + 1][x] == '7' ||
 	  map->data[y][x] == 's');
 }
 
@@ -25,7 +26,7 @@ void	mario_left(t_map* map, t_objlist* objlist)
   printf("left\n");
   x = objlist->player.pos_x;
   y = objlist->player.pos_y;
-  if (!mario_can_walk(map, x, y) || map->data[y][x - 1] == 'w')
+  if (!mario_can_walk(map, x, y) || map->data[y][x - 1] == 'w' || map->data[y][x - 1] == '4' || map->data[y][x - 1] == '5')
     return;
   objlist->player.pos_x = x - 1;
   objlist->player.direction = DIR_LEFT;
@@ -38,7 +39,7 @@ void	mario_right(t_map* map, t_objlist* objlist)
 
   x = objlist->player.pos_x;
   y = objlist->player.pos_y;
-  if (!mario_can_walk(map, x, y) || map->data[y][x + 1] == 'w')
+  if (!mario_can_walk(map, x, y) || map->data[y][x + 1] == 'w' || map->data[y][x - 1] == '4' || map->data[y][x - 1] == '5')
     return;
   objlist->player.pos_x = x + 1;
   objlist->player.direction = DIR_RIGHT;
