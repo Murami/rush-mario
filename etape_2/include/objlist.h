@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 13:21:49 2014 guerot_a
-** Last update Sat Mar  8 18:12:54 2014 guerot_a
+** Last update Sat Mar  8 20:35:50 2014 guerot_a
 */
 
 #ifndef OBJLIST_H
@@ -51,6 +51,7 @@ typedef struct	s_monster
   int		pos_x;
   int		pos_y;
   int		direction;
+  Uint32	lasttime_walk;
 }		t_monster;
 
 typedef struct	s_objlist
