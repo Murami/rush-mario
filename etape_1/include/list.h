@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Fri Mar  7 22:07:47 2014 guerot_a
-** Last update Fri Mar  7 23:33:18 2014 guerot_a
+** Last update Sat Mar  8 12:51:12 2014 guerot_a
 */
 
 #ifndef LIST_H
@@ -55,6 +55,5 @@ t_listit	list_find(t_list list, t_predicate predicate, void* val_cmp);
 
 t_listit	list_begin(t_list list);
 t_listit	list_end(t_list list);
-
 
 #endif /* LIST_H */

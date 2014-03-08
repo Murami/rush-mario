@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 00:11:15 2014 guerot_a
-** Last update Sat Mar  8 01:55:46 2014 guerot_a
+** Last update Sat Mar  8 12:49:10 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -29,8 +29,12 @@ void	load_sprites()
   sprites[3].img = xSDL_LoadBMP("Sprites/Turtle.bmp");
   sprites[4].img = xSDL_LoadBMP("Sprites/Key.bmp");
   sprites[5].img = xSDL_LoadBMP("Sprites/Exit.bmp");
-  SDL_SetColorKey(sprites[1].img, SDL_SRCCOLORKEY, SDL_MapRGB(sprites[1].img->format, 255, 0, 186));
-  SDL_SetColorKey(sprites[2].img, SDL_SRCCOLORKEY, SDL_MapRGB(sprites[2].img->format, 255, 0, 186));
-  SDL_SetColorKey(sprites[3].img, SDL_SRCCOLORKEY, SDL_MapRGB(sprites[3].img->format, 255, 0, 186));
-  SDL_SetColorKey(sprites[4].img, SDL_SRCCOLORKEY, SDL_MapRGB(sprites[4].img->format, 255, 0, 186));
+  SDL_SetColorKey(sprites[1].img, SDL_SRCCOLORKEY,
+		  SDL_MapRGB(sprites[1].img->format, 255, 0, 186));
+  SDL_SetColorKey(sprites[2].img, SDL_SRCCOLORKEY,
+		  SDL_MapRGB(sprites[2].img->format, 255, 0, 186));
+  SDL_SetColorKey(sprites[3].img, SDL_SRCCOLORKEY,
+		  SDL_MapRGB(sprites[3].img->format, 255, 0, 186));
+  SDL_SetColorKey(sprites[4].img, SDL_SRCCOLORKEY,
+		  SDL_MapRGB(sprites[4].img->format, 255, 0, 186));
 }
