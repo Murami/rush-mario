@@ -5,7 +5,7 @@
 ## Login   <guerot_a@epitech.net>
 ## 
 ## Started on  Sun Mar  2 18:06:05 2014 anthony guerot
-## Last update Fri Mar  7 21:44:09 2014 guerot_a
+## Last update Sat Mar  8 00:45:44 2014 guerot_a
 ##
 
 ## FILES
@@ -14,7 +14,17 @@ NAME		=	epikong
 
 SRC		=	main		\
 			xabort		\
-			xfree
+			xfree		\
+			xmalloc		\
+			xSDL_LoadBMP	\
+			list		\
+			list_utility	\
+			list_modifier	\
+			list_iterator	\
+			load_map	\
+			load_sprites	\
+			sprite_pair
+
 
 SRC_EXT		=	.c
 
