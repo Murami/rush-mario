@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Fri Mar  7 21:47:03 2014 guerot_a
-** Last update Sat Mar  8 16:09:14 2014 guerot_a
+** Last update Sat Mar  8 21:30:45 2014 guerot_a
 */
 
 #ifndef EPIKONG_H
@@ -51,5 +51,6 @@ void	mario_left(t_map* map, t_objlist* objlist);
 void	mario_right(t_map* map, t_objlist* objlist);
 void	mario_up(t_map* map, t_objlist* objlist);
 void	mario_down(t_map* map, t_objlist* objlist);
+void	mario_jump(t_map* map, t_objlist* objlist);
 
 #endif /* EPIKONG_H */

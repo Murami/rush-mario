@@ -5,13 +5,13 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 15:05:50 2014 guerot_a
-** Last update Sat Mar  8 18:46:35 2014 guerot_a
+** Last update Sat Mar  8 22:02:45 2014 guerot_a
 */
 
 #include "epikong.h"
 
-#define PERIOD_FALL	150
-#define PERIOD_JUMP	150
+#define PERIOD_FALL	75
+#define PERIOD_JUMP	75
 
 void	mario_falling(t_map* map, t_objlist* objlist)
 {
@@ -148,7 +148,7 @@ void	manage_physics(t_map* map, t_objlist* objlist)
   if (time - objlist->player.lasttime_fall > PERIOD_FALL)
     {
       mario_falling(map, objlist);
-      mario_jumping(map, objlist);
       objlist->player.lasttime_fall = time;
     }
+  mario_jumping(map, objlist);
 }

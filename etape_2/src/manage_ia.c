@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 15:07:11 2014 guerot_a
-** Last update Sat Mar  8 20:34:41 2014 genes_k
+** Last update Sat Mar  8 22:01:39 2014 guerot_a
 ** Last update Sat Mar  8 20:25:57 2014 SADOWSKI Geoffroy
 */
 
@@ -68,8 +68,8 @@ void	manage_ia(t_map* map, t_objlist* objlist)
 	    bot_right(map,data);
 	  else if (data->direction == DIR_LEFT)
 	    bot_left(map,data);
-	  it_incr(it);
 	  data->lasttime_walk = time;
 	}
+      it_incr(it);
     }
 }

@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 14:57:21 2014 guerot_a
-** Last update Sat Mar  8 20:31:24 2014 guerot_a
+** Last update Sat Mar  8 21:50:16 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -22,6 +22,7 @@ void	mario_left(t_map* map, t_objlist* objlist)
   unsigned int	x;
   unsigned int	y;
 
+  printf("left\n");
   x = objlist->player.pos_x;
   y = objlist->player.pos_y;
   if (!mario_can_walk(map, x, y) || map->data[y][x - 1] == 'w')

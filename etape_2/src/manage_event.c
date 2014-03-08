@@ -5,77 +5,105 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 15:01:46 2014 guerot_a
-** Last update Sat Mar  8 18:44:41 2014 guerot_a
+** Last update Sat Mar  8 21:58:01 2014 guerot_a
 */
 
 #include "epikong.h"
 
-#define PERIOD_INPUT 100
+t_event	events[] =
+  {
+    {SDLK_SPACE	, 0, 0, 0, &mario_jump},
+    {SDLK_LEFT	, 0, 0, 0, &mario_left},
+    {SDLK_RIGHT	, 0, 0, 0, &mario_right},
+    {SDLK_UP	, 0, 0, 0, &mario_up},
+    {SDLK_DOWN	, 0, 0, 0, &mario_down},
+    {0, 0, 0, 0, NULL}
+  };
 
-int keys[512];
-
-static void	manage_event_by_key(t_map* map, t_objlist* objlist, SDLKey key)
+static void	add_pressed(SDLKey key)
 {
-  if (key == SDLK_SPACE)
-    mario_jump(map, objlist);
-  else if (key == SDLK_a)
-    mario_jump_left(map, objlist);
-  else if (key == SDLK_e)
-    mario_jump_right(map, objlist);
-  else if (key == SDLK_RIGHT)
-    mario_right(map, objlist);
-  else if (key == SDLK_LEFT)
-    mario_left(map, objlist);
-  else if (key == SDLK_UP)
-    mario_up(map, objlist);
-  else if (key == SDLK_DOWN)
-    mario_down(map, objlist);
-}
-
-static void	manage_event_mapped(t_map* map, t_objlist* objlist)
-{
-  int	i;
+  int		i;
 
   i = 0;
-  while (i < 512)
+  while (events[i].func)
     {
-      if (keys[i])
+      if (events[i].key == key)
 	{
-	  manage_event_by_key(map, objlist, i);
+	  if (i == 1)
+	    printf("left pre\n");
+	  events[i].pressed++;
 	}
       i++;
     }
 }
 
-static int	manage_event_key(t_map* map, t_objlist* objlist, SDLKey key)
+static void	add_released(SDLKey key)
 {
-  if (key == SDLK_ESCAPE)
-    return (0);
-  else
-    keys[key] = 1;
-  return (1);
+  int		i;
+
+  i = 0;
+  while (events[i].func)
+    {
+      if (events[i].key == key)
+	{
+	  if (i == 1)
+	    printf("left rel\n");
+	  events[i].released++;
+	}
+      i++;
+    }
+}
+
+static void	run_events(t_map* map, t_objlist* objlist)
+{
+  int		i;
+
+  i = 0;
+  while (events[i].func)
+    {
+      if ((events[i].active && !events[i].released) || events[i].pressed)
+	events[i].func(map, objlist);
+      if (i == 1 && events[i].active)
+	printf("dafuck\n");
+      i++;
+    }
+}
+
+static void	clear_events()
+{
+  int		i;
+
+  i = 0;
+  while (events[i].func)
+    {
+      events[i].pressed = (events[i].pressed - events[i].released > 0) ? 1 : events[i].pressed == 1;
+      events[i].released = (events[i].released - events[i].pressed > 0) ? 1 : events[i].released == 1;
+      if ((events[i].pressed && !events[i].released && !events[i].active) ||
+	  (!events[i].pressed && events[i].released && events[i].active))
+	events[i].active = !events[i].active;
+      events[i].pressed = 0;
+      events[i].released = 0;
+      i++;
+    }
 }
 
 int	manage_event(t_map* map, t_objlist* objlist)
 {
-  static Uint32	lasttime = 0;
-  Uint32	currtime;
   SDL_Event	event;
   int		still;
 
   still = 1;
-  currtime = SDL_GetTicks();
-  if (currtime - lasttime < PERIOD_INPUT)
-    return (1);
-  lasttime = currtime;
-  memset(keys, 0, 512 * sizeof(int));
   while (SDL_PollEvent(&event))
     {
-      if (event.type == SDL_QUIT)
+      if (event.type == SDL_QUIT ||
+	  (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_ESCAPE))
 	return (0);
       if (event.type == SDL_KEYDOWN)
-	still = manage_event_key(map, objlist, event.key.keysym.sym);
+	add_pressed(event.key.keysym.sym);
+      if (event.type == SDL_KEYUP)
+	add_released(event.key.keysym.sym);
     }
-  manage_event_mapped(map, objlist);
+  run_events(map, objlist);
+  clear_events();
   return (still);
 }

@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Fri Mar  7 20:33:05 2014 guerot_a
-** Last update Sat Mar  8 17:57:43 2014 SADOWSKI Geoffroy
+** Last update Sat Mar  8 22:02:06 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -18,7 +18,6 @@ SDL_Surface*	epikong_init(char* filename, t_map* map, t_objlist* objlist)
   load_gameobject(map, objlist);
   load_sprites();
   SDL_Init(SDL_INIT_VIDEO);
-  SDL_EnableKeyRepeat(1, PERIOD_FPS);
   return (xSDL_SetVideoMode(map->width * CASE_SIZE,
 			    map->height * CASE_SIZE, 32, SDL_HWSURFACE | SDL_DOUBLEBUF));
 }
@@ -58,9 +57,9 @@ void	epikong(char* filename)
       still = manage_game(&map, &objlist);
       draw_game(&map, &objlist, screen);
       tmptime = SDL_GetTicks();
-      if (tmptime - lasttime < PERIOD_FPS)
-	SDL_Delay(tmptime - lasttime);
-      lasttime = tmptime;
+      /* if (tmptime - lasttime < PERIOD_FPS) */
+      /* 	SDL_Delay(tmptime - lasttime); */
+      /* lasttime = tmptime; */
     }
 }
 
