@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 13:15:52 2014 guerot_a
-** Last update Sat Mar  8 17:09:57 2014 guerot_a
+** Last update Sat Mar  8 18:27:30 2014 SADOWSKI Geoffroy
 */
 
 #include "epikong.h"
@@ -29,6 +29,8 @@ void	load_monster(int x, int y, t_objlist* objlist)
   monster = xmalloc(sizeof(t_monster));
   monster->pos_x = x;
   monster->pos_y = y;
+  monster->lasttime_walk = 0;
+  monster->direction = DIR_RIGHT;
   list_push_back(objlist->monster_list, monster);
 }
 

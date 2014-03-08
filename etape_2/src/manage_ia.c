@@ -5,10 +5,12 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 15:07:11 2014 guerot_a
-** Last update Sat Mar  8 17:55:54 2014 SADOWSKI Geoffroy
+** Last update Sat Mar  8 20:25:57 2014 SADOWSKI Geoffroy
 */
 
 #include "epikong.h"
+
+#define PERIOD_WALK     150
 
 int     bot_can_walk(t_map* map, int x, int y)
 {
@@ -17,40 +19,56 @@ int     bot_can_walk(t_map* map, int x, int y)
           map->data[y][x] == 's');
 }
 
-void    bot_left(t_map* map, t_objlist* objlist)
+void    bot_left(t_map* map, t_monster *data)
 {
   unsigned int  x;
   unsigned int  y;
 
-  x = objlist->player.pos_x;
-  y = objlist->player.pos_y;
-  if (!bot_can_walk(map, x, y) || map->data[y][x - 1] == 'w')
-    return;
-  objlist->player.pos_x = x - 1;
+  x = data->pos_x;
+  y = data->pos_y;
+  if (!bot_can_walk(map, x-1, y) || map->data[y][x - 1] == 'w')
+    {
+      data->direction = DIR_RIGHT;
+      return;
+    }
+  data->pos_x = x - 1;
 }
 
-void    bot_right(t_map* map, t_objlist* objlist)
+void    bot_right(t_map* map, t_monster *data)
 {
   unsigned int  x;
   unsigned int  y;
 
-  x = objlist->player.pos_x;
-  y = objlist->player.pos_y;
-  if (!bot_can_walk(map, x, y) || map->data[y][x + 1] == 'w')
-    return;
-  objlist->player.pos_x = x + 1;
+
+  x = data->pos_x;
+  y = data->pos_y;
+  if (!bot_can_walk(map, x+1, y) || map->data[y][x + 1] == 'w')
+    {
+      data->direction = DIR_LEFT;
+      return;
+    }
+  data->pos_x = x + 1;
 }
 
 void	manage_ia(t_map* map, t_objlist* objlist)
 {
-  return;
-  t_listit      it;
+  t_list	it;
+  t_monster	*data;
+  Uint32	time;
 
   it = list_begin(objlist->monster_list);
-  while (it != list_end(list))
+  while (it != list_end(objlist->monster_list))
     {
-
-      it_incr(it);
+      time = SDL_GetTicks();
+      data = it->data;
+      if (time - data->lasttime_walk > PERIOD_WALK)
+	{
+	  if (data->direction == DIR_RIGHT)
+	    bot_right(map,data);
+	  else if (data->direction == DIR_LEFT)
+	    bot_left(map,data);
+	  it_incr(it);
+	  data->lasttime_walk = time;
+	}
     }
-  return (it);
 }
