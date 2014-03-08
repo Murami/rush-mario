@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 14:57:21 2014 guerot_a
-** Last update Sat Mar  8 22:38:36 2014 guerot_a
+** Last update Sat Mar  8 23:43:11 2014 SADOWSKI Geoffroy
 */
 
 #include "epikong.h"
@@ -72,7 +72,7 @@ void	mario_up(t_map* map, t_objlist* objlist)
   if (map->data[y][x] != 's')
     return;
   objlist->player.pos_y = y - 1;
-  objlist->player.direction = DIR_UP;
+  //  objlist->player.direction = DIR_UP;
 }
 
 void	mario_down(t_map* map, t_objlist* objlist)
@@ -87,7 +87,7 @@ void	mario_down(t_map* map, t_objlist* objlist)
   if (map->data[y][x] != 's')
     return;
   objlist->player.pos_y = y;
-  objlist->player.direction = DIR_DOWN;
+  //objlist->player.direction = DIR_DOWN;
 }
 
 void	mario_jump(t_map* map, t_objlist* objlist)

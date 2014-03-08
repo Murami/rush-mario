@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 15:05:50 2014 guerot_a
-** Last update Sat Mar  8 22:18:58 2014 guerot_a
+** Last update Sat Mar  8 23:34:52 2014 SADOWSKI Geoffroy
 */
 
 #include "epikong.h"
@@ -66,6 +66,7 @@ void	mario_jumping_right(t_map* map, t_objlist* objlist)
   int	x;
   int	y;
 
+  objlist->player.direction = DIR_RIGHT;
   if (objlist->player.jumping > JUMP_STEP3)
     {
       objlist->player.jumping = NOT_JUMPING;
@@ -95,6 +96,7 @@ void	mario_jumping_left(t_map* map, t_objlist* objlist)
   int	x;
   int	y;
 
+  objlist->player.direction = DIR_LEFT;
   if (objlist->player.jumping > JUMP_STEP3)
     {
       objlist->player.jumping = NOT_JUMPING;
@@ -124,10 +126,7 @@ void	mario_jumping(t_map* map, t_objlist* objlist)
   Uint32	currtime;
 
   if (objlist->player.jumping == NOT_JUMPING)
-    {
-      objlist->player.direction = DIR_NONE;
-      return;
-    }
+    return;
   currtime = SDL_GetTicks();
   if (currtime - objlist->player.lasttime_jump < PERIOD_JUMP)
     return;
