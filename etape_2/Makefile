@@ -5,31 +5,32 @@
 ## Login   <guerot_a@epitech.net>
 ## 
 ## Started on  Sun Mar  2 18:06:05 2014 anthony guerot
-## Last update Sat Mar  8 15:09:44 2014 guerot_a
+## Last update Sat Mar  8 16:09:50 2014 guerot_a
 ##
 
 ## FILES
 
 NAME		=	epikong
 
-SRC		=	main		\
-			xabort		\
-			xfree		\
-			xmalloc		\
-			xSDL_LoadBMP	\
-			list		\
-			list_utility	\
-			list_modifier	\
-			list_iterator	\
-			load_map	\
-			load_sprites	\
-			sprite_pair	\
-			check_load_map	\
-			load_gameobject	\
-			draw		\
-			manage_event	\
-			manage_ia	\
-			manage_physic	\
+SRC		=	main			\
+			xabort			\
+			xfree			\
+			xmalloc			\
+			xSDL_LoadBMP		\
+			xSDL_SetVideoMode	\
+			list			\
+			list_utility		\
+			list_modifier		\
+			list_iterator		\
+			load_map		\
+			load_sprites		\
+			sprite_pair		\
+			check_load_map		\
+			load_gameobject		\
+			draw			\
+			manage_event		\
+			manage_ia		\
+			manage_physic		\
 			mario
 
 

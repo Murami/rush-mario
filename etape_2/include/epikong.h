@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Fri Mar  7 21:47:03 2014 guerot_a
-** Last update Sat Mar  8 15:07:36 2014 guerot_a
+** Last update Sat Mar  8 16:09:14 2014 guerot_a
 */
 
 #ifndef EPIKONG_H
@@ -29,6 +29,7 @@ void		_xfree(void** ptr);
 void		xabort(char *str);
 void*		xmalloc(size_t n);
 SDL_Surface*	xSDL_LoadBMP(char* filename);
+SDL_Surface*	xSDL_SetVideoMode(int w, int h, int bpp, uint32_t flags);
 
 void	load_map(char* filename, t_map* map);
 void	load_sprites();
