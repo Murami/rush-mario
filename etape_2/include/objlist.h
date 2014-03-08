@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 13:21:49 2014 guerot_a
-** Last update Sat Mar  8 16:59:47 2014 guerot_a
+** Last update Sat Mar  8 18:12:54 2014 guerot_a
 */
 
 #ifndef OBJLIST_H
@@ -22,6 +22,10 @@
 # define DIR_LEFT	2
 # define DIR_DOWN	3
 # define DIR_UP		4
+# define NOT_JUMPING	0
+# define JUMP_STEP1	1
+# define JUMP_STEP2	2
+# define JUMP_STEP3	3
 
 typedef struct	s_mario
 {
@@ -31,7 +35,9 @@ typedef struct	s_mario
   int		speed_fall;
   int		equiped;
   Uint32	lasttime_fall;
+  Uint32	lasttime_jump;
   int		direction;
+  int		jumping;
 }		t_mario;
 
 typedef struct	s_spawn

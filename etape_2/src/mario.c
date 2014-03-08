@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 14:57:21 2014 guerot_a
-** Last update Sat Mar  8 17:00:59 2014 guerot_a
+** Last update Sat Mar  8 20:31:24 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -22,7 +22,6 @@ void	mario_left(t_map* map, t_objlist* objlist)
   unsigned int	x;
   unsigned int	y;
 
-  printf("left\n");
   x = objlist->player.pos_x;
   y = objlist->player.pos_y;
   if (!mario_can_walk(map, x, y) || map->data[y][x - 1] == 'w')
@@ -36,7 +35,6 @@ void	mario_right(t_map* map, t_objlist* objlist)
   unsigned int	x;
   unsigned int	y;
 
-  printf("right\n");
   x = objlist->player.pos_x;
   y = objlist->player.pos_y;
   if (!mario_can_walk(map, x, y) || map->data[y][x + 1] == 'w')
@@ -50,7 +48,6 @@ void	mario_up(t_map* map, t_objlist* objlist)
   int	x;
   int	y;
 
-  printf("down\n");
   x = objlist->player.pos_x;
   y = objlist->player.pos_y;
   if (map->data[y][x] != 's')
@@ -64,7 +61,6 @@ void	mario_down(t_map* map, t_objlist* objlist)
   int	x;
   int	y;
 
-  printf("up\n");
   x = objlist->player.pos_x;
   y = objlist->player.pos_y + 1;
   if (map->data[y][x] != 's')
@@ -73,14 +69,41 @@ void	mario_down(t_map* map, t_objlist* objlist)
   objlist->player.direction = DIR_DOWN;
 }
 
-/* void	mario_jump() */
-/* { */
-/* } */
+void	mario_jump(t_map* map, t_objlist* objlist)
+{
+  int	x;
+  int	y;
 
-/* void	mario_jump_left() */
-/* { */
-/* } */
+  x = objlist->player.pos_x;
+  y = objlist->player.pos_y;
+  if (!mario_can_walk(map, x, y))
+    return;
+  objlist->player.jumping = JUMP_STEP1;
+  objlist->player.direction = DIR_NONE;
+}
 
-/* void	mario_jump_right() */
-/* { */
-/* } */
+void	mario_jump_right(t_map* map, t_objlist* objlist)
+{
+  int	x;
+  int	y;
+
+  x = objlist->player.pos_x;
+  y = objlist->player.pos_y;
+  if (!mario_can_walk(map, x, y))
+    return;
+  objlist->player.jumping = JUMP_STEP1;
+  objlist->player.direction = DIR_RIGHT;
+}
+
+void	mario_jump_left(t_map* map, t_objlist* objlist)
+{
+  int	x;
+  int	y;
+
+  x = objlist->player.pos_x;
+  y = objlist->player.pos_y;
+  if (!mario_can_walk(map, x, y))
+    return;
+  objlist->player.jumping = JUMP_STEP1;
+  objlist->player.direction = DIR_LEFT;
+}

@@ -5,32 +5,54 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 15:01:46 2014 guerot_a
-** Last update Sat Mar  8 17:07:34 2014 guerot_a
+** Last update Sat Mar  8 18:44:41 2014 guerot_a
 */
 
 #include "epikong.h"
 
 #define PERIOD_INPUT 100
 
-static int	manage_event_key(t_map* map, t_objlist* objlist, SDLKey key)
-{
-  SDL_Event	event;
+int keys[512];
 
-  if (key == SDLK_ESCAPE)
-    return (0);
-  /* ptr func ici !!! */
-  else if (key == SDLK_LEFT)
-    mario_left(map, objlist);
+static void	manage_event_by_key(t_map* map, t_objlist* objlist, SDLKey key)
+{
+  if (key == SDLK_SPACE)
+    mario_jump(map, objlist);
+  else if (key == SDLK_a)
+    mario_jump_left(map, objlist);
+  else if (key == SDLK_e)
+    mario_jump_right(map, objlist);
   else if (key == SDLK_RIGHT)
     mario_right(map, objlist);
+  else if (key == SDLK_LEFT)
+    mario_left(map, objlist);
   else if (key == SDLK_UP)
     mario_up(map, objlist);
   else if (key == SDLK_DOWN)
     mario_down(map, objlist);
+}
+
+static void	manage_event_mapped(t_map* map, t_objlist* objlist)
+{
+  int	i;
+
+  i = 0;
+  while (i < 512)
+    {
+      if (keys[i])
+	{
+	  manage_event_by_key(map, objlist, i);
+	}
+      i++;
+    }
+}
+
+static int	manage_event_key(t_map* map, t_objlist* objlist, SDLKey key)
+{
+  if (key == SDLK_ESCAPE)
+    return (0);
   else
-    return (1);
-  /**/
-  while (SDL_PollEvent(&event));
+    keys[key] = 1;
   return (1);
 }
 
@@ -46,6 +68,7 @@ int	manage_event(t_map* map, t_objlist* objlist)
   if (currtime - lasttime < PERIOD_INPUT)
     return (1);
   lasttime = currtime;
+  memset(keys, 0, 512 * sizeof(int));
   while (SDL_PollEvent(&event))
     {
       if (event.type == SDL_QUIT)
@@ -53,5 +76,6 @@ int	manage_event(t_map* map, t_objlist* objlist)
       if (event.type == SDL_KEYDOWN)
 	still = manage_event_key(map, objlist, event.key.keysym.sym);
     }
+  manage_event_mapped(map, objlist);
   return (still);
 }
