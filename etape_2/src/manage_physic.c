@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 15:05:50 2014 guerot_a
-** Last update Sat Mar  8 22:02:45 2014 guerot_a
+** Last update Sat Mar  8 22:18:58 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -132,9 +132,9 @@ void	mario_jumping(t_map* map, t_objlist* objlist)
   if (currtime - objlist->player.lasttime_jump < PERIOD_JUMP)
     return;
   objlist->player.lasttime_jump = currtime;
-  if (objlist->player.direction == DIR_LEFT)
+  if (objlist->player.direction_jump == DIR_LEFT)
     mario_jumping_left(map, objlist);
-  else if (objlist->player.direction == DIR_RIGHT)
+  else if (objlist->player.direction_jump == DIR_RIGHT)
     mario_jumping_right(map, objlist);
   else
     mario_jumping_up(map, objlist);

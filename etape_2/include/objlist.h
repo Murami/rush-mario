@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 13:21:49 2014 guerot_a
-** Last update Sat Mar  8 21:44:14 2014 SADOWSKI Geoffroy
+** Last update Sat Mar  8 22:16:36 2014 guerot_a
 */
 
 #ifndef OBJLIST_H
@@ -36,7 +36,9 @@ typedef struct	s_mario
   int		equiped;
   Uint32	lasttime_fall;
   Uint32	lasttime_jump;
+  Uint32	lasttime_walk;
   int		direction;
+  int		direction_jump;
   int		jumping;
   int		key;
 }		t_mario;

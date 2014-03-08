@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 15:01:46 2014 guerot_a
-** Last update Sat Mar  8 22:06:06 2014 guerot_a
+** Last update Sat Mar  8 22:34:08 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -13,10 +13,12 @@
 t_event	events[] =
   {
     {SDLK_SPACE	, 0, 0, 0, &mario_jump},
-    {SDLK_LEFT	, 0, 0, 0, &mario_left},
-    {SDLK_RIGHT	, 0, 0, 0, &mario_right},
-    {SDLK_UP	, 0, 0, 0, &mario_up},
-    {SDLK_DOWN	, 0, 0, 0, &mario_down},
+    {SDLK_KP7	, 0, 0, 0, &mario_jump_left},
+    {SDLK_KP9	, 0, 0, 0, &mario_jump_right},
+    {SDLK_KP4	, 0, 0, 0, &mario_left},
+    {SDLK_KP6	, 0, 0, 0, &mario_right},
+    {SDLK_KP8	, 0, 0, 0, &mario_up},
+    {SDLK_KP5	, 0, 0, 0, &mario_down},
     {0, 0, 0, 0, NULL}
   };
 
@@ -28,11 +30,7 @@ static void	add_pressed(SDLKey key)
   while (events[i].func)
     {
       if (events[i].key == key)
-	{
-	  if (i == 1)
-	    printf("left pre\n");
-	  events[i].pressed++;
-	}
+	events[i].pressed++;
       i++;
     }
 }
@@ -45,11 +43,7 @@ static void	add_released(SDLKey key)
   while (events[i].func)
     {
       if (events[i].key == key)
-	{
-	  if (i == 1)
-	    printf("left rel\n");
-	  events[i].released++;
-	}
+	events[i].released++;
       i++;
     }
 }
@@ -63,8 +57,6 @@ static void	run_events(t_map* map, t_objlist* objlist)
     {
       if ((events[i].active && !events[i].released) || events[i].pressed)
 	events[i].func(map, objlist);
-      if (i == 1 && events[i].active)
-	printf("dafuck\n");
       i++;
     }
 }
