@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 15:07:11 2014 guerot_a
-** Last update Sat Mar  8 17:55:54 2014 SADOWSKI Geoffroy
+** Last update Sat Mar  8 18:13:33 2014 genes_k
 */
 
 #include "epikong.h"
@@ -43,14 +43,13 @@ void    bot_right(t_map* map, t_objlist* objlist)
 
 void	manage_ia(t_map* map, t_objlist* objlist)
 {
-  return;
-  t_listit      it;
+  /* t_listit      it; */
 
-  it = list_begin(objlist->monster_list);
-  while (it != list_end(list))
-    {
+  /* it = list_begin(objlist->monster_list); */
+  /* while (it != list_end(list)) */
+  /*   { */
 
-      it_incr(it);
-    }
-  return (it);
+  /*     it_incr(it); */
+  /*   } */
+  /* return (it); */
 }
