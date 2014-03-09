@@ -5,7 +5,7 @@
 ## Login   <guerot_a@epitech.net>
 ## 
 ## Started on  Sun Mar  2 18:06:05 2014 anthony guerot
-## Last update Sun Mar  9 21:21:06 2014 guerot_a
+## Last update Sun Mar  9 21:41:17 2014 guerot_a
 ##
 
 ## FILES
@@ -47,7 +47,8 @@ SRC		=	main			\
 			boss_jump		\
 			boss_move		\
 			boss_jump_phys		\
-			manage_boss
+			manage_boss		\
+			check_hit_players
 
 
 SRC_EXT		=	.c
