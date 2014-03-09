@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Fri Mar  7 21:47:03 2014 guerot_a
-** Last update Sun Mar  9 14:19:46 2014 guerot_a
+** Last update Sun Mar  9 15:04:42 2014 guerot_a
 */
 
 #ifndef EPIKONG_H
@@ -27,6 +27,7 @@
 # define DIR_DELAY		1000
 # define COLOR_ALPHA		SDL_MapRGB(sprites[i].img->format, 255, 0, 186)
 # define OFFSET_LEFT_KEY	200
+# define OFFSET_LEFT_GUN	220
 
 # include "dependencies.h"
 
@@ -51,6 +52,7 @@ SDL_Surface*	xSDL_SetVideoMode(int w, int h, int bpp, uint32_t flags);
 
 void		load_mario(int x, int y, t_objlist* objlist);
 void		load_monster(int x, int y, t_objlist* objlist);
+void		load_monster2(int x, int y, t_objlist* objlist);
 void		load_map(char* filename, t_map* map);
 void		load_sprites();
 void		load_gameobject(t_map* map, t_objlist* objlist);
