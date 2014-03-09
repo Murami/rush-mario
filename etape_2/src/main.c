@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Fri Mar  7 20:33:05 2014 guerot_a
-** Last update Sun Mar  9 02:46:54 2014 guerot_a
+** Last update Sun Mar  9 03:00:18 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -42,14 +42,14 @@ void	draw_game(t_map* map, t_objlist* objlist, SDL_Surface* screen, SDL_Surface*
 
 char*	stages[5] =
   {
-    "map/stage12.map",
-    "map/stage15.map",
-    "map/stage13.map",
-    "map/stage14.map",
+    "map/stage9.map",
+    "map/stage9.map",
+    "map/stage9.map",
+    "map/stage9.map",
     "map/stage1.map"
   };
 
-void	run_stage(char *filename)
+int	run_stage(char *filename)
 {
   Uint32	lasttime;
   Uint32	tmptime;
@@ -71,12 +71,9 @@ void	run_stage(char *filename)
       	SDL_Delay(tmptime - lasttime);
       lasttime = tmptime;
     }
-}
-
-int	play_stage(int stage)
-{
-  run_stage(stages[stage]);
-  return (0);
+  if (!still)
+    return (0);
+  return (1);
 }
 
 int	manage_stages()
@@ -94,7 +91,7 @@ int	manage_stages()
       stage = event.key.keysym.sym - SDLK_KP1;
       while (!dead && stage < 5)
 	{
-	  dead = !play_stage(stage);
+	  dead = !run_stage(stages[stage]);
 	  stage++;
 	}
     }
