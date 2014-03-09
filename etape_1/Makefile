@@ -5,7 +5,7 @@
 ## Login   <guerot_a@epitech.net>
 ## 
 ## Started on  Sun Mar  2 18:06:05 2014 anthony guerot
-## Last update Sat Mar  8 12:58:40 2014 guerot_a
+## Last update Sun Mar  9 21:20:03 2014 guerot_a
 ##
 
 ## FILES
@@ -64,7 +64,7 @@ MD		=	mkdir -p
 
 ## CONSTANTS
 
-DBGBOOL		=	yes
+DBGBOOL		=	no
 
 DBG		=	-g3		\
 			-ggdb
