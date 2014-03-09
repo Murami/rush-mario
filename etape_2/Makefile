@@ -5,7 +5,7 @@
 ## Login   <guerot_a@epitech.net>
 ## 
 ## Started on  Sun Mar  2 18:06:05 2014 anthony guerot
-## Last update Sat Mar  8 21:42:19 2014 SADOWSKI Geoffroy
+## Last update Sun Mar  9 01:42:00 2014 guerot_a
 ##
 
 ## FILES
@@ -32,7 +32,8 @@ SRC		=	main			\
 			manage_ia		\
 			manage_physic		\
 			mario			\
-			manage_game_check
+			manage_game_check	\
+			draw_info
 
 
 SRC_EXT		=	.c

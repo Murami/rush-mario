@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Fri Mar  7 21:47:03 2014 guerot_a
-** Last update Sun Mar  9 00:39:38 2014 guerot_a
+** Last update Sun Mar  9 01:48:02 2014 guerot_a
 */
 
 #ifndef EPIKONG_H
@@ -14,7 +14,9 @@
 # define _POSIX_C_SOURCE
 # define _XOPEN_SOURCE
 
-# define CASE_SIZE 16
+# define CASE_SIZE	16
+# define PERIOD_FPS	(1000 / 50)
+# define HEIGHT_INFOS	50
 
 # include "dependencies.h"
 
@@ -41,6 +43,7 @@ SDL_Surface*	get_sprite_by_str(char* key);
 
 void	draw_map(t_map* map, SDL_Surface* screen);
 void	draw_gameobject(t_objlist* list, SDL_Surface* screen);
+void	draw_info(t_objlist* list, SDL_Surface* screen, SDL_Surface* zone_infos);
 
 int	manage_event(t_map* map, t_objlist* objlist);
 void	manage_physics(t_map* map, t_objlist* objlist);
