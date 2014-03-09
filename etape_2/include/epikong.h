@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Fri Mar  7 21:47:03 2014 guerot_a
-** Last update Sun Mar  9 16:41:01 2014 guerot_a
+** Last update Sun Mar  9 17:30:05 2014 genes_k
 */
 
 #ifndef EPIKONG_H
@@ -29,6 +29,7 @@
 # define OFFSET_LEFT_KEY	200
 # define OFFSET_LEFT_GUN	220
 # define PERIOD_RUN_PROJ	50
+# define IS_WALL(a)		(strchr("wcr12345678", a))
 
 # include "dependencies.h"
 
@@ -120,7 +121,7 @@ void		take_gun(t_map* map, t_objlist* list, int x, int y);
 void		take_life(t_map* map, t_objlist* list, int x, int y);
 void		take_key(t_map* map, t_objlist* list, int x, int y);
 void		use_door(t_map* map, t_objlist* list, int x, int y);
-
+void		take_trap(t_map* map, t_objlist* list, int x, int y);
 /*
 ** Utility
 */

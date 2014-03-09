@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 15:07:11 2014 guerot_a
-** Last update Sun Mar  9 15:44:25 2014 guerot_a
+** Last update Sun Mar  9 17:16:43 2014 genes_k
 */
 
 #include "epikong.h"
@@ -15,6 +15,8 @@ int     bot_can_walk(t_map* map, int x, int y)
   return (map->data[y + 1][x] == 'w' ||
           map->data[y + 1][x] == 's' ||
           map->data[y + 1][x] == '7' ||
+          map->data[y + 1][x] == 'c' ||
+          map->data[y + 1][x] == 'r' ||
           map->data[y][x] == 's');
 }
 
