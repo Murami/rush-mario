@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Fri Mar  7 21:55:43 2014 guerot_a
-** Last update Sat Mar  8 00:32:40 2014 guerot_a
+** Last update Sun Mar  9 18:06:52 2014 guerot_a
 */
 
 #ifndef SPRITE_H
@@ -17,6 +17,7 @@ typedef struct	s_spritepair
 {
   uint32_t	key_char;
   char*		key_str;
+  char*		filename;
   SDL_Surface*	img;
 }		t_spritepair;
 
