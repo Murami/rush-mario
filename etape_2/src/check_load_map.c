@@ -5,11 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 12:52:55 2014 guerot_a
-<<<<<<< HEAD
-** Last update Sun Mar  9 15:07:29 2014 genes_k
-=======
-** Last update Sun Mar  9 14:57:25 2014 guerot_a
->>>>>>> d241fdcc968283fe9171686b0617e51c70226136
+** Last update Sun Mar  9 16:45:04 2014 genes_k
 */
 
 #include "epikong.h"
@@ -34,13 +30,10 @@ const char	valid_char[] =
     '7',
     '8',
     'M',
-<<<<<<< HEAD
     'c',
     'r',
     'B',
     't',
-=======
->>>>>>> d241fdcc968283fe9171686b0617e51c70226136
     '\0'
   };
 
