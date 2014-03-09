@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 00:11:15 2014 guerot_a
-** Last update Sun Mar  9 14:30:44 2014 guerot_a
+** Last update Sun Mar  9 14:41:17 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -72,6 +72,6 @@ void	load_sprites()
   sprites[18].img = xSDL_LoadBMP("Sprites/Mario_Death.bmp");
   sprites[19].img = xSDL_LoadBMP("Sprites/Life.bmp");
   sprites[20].img = xSDL_LoadBMP("Sprites/Life.bmp");//Here is GUN !
-  sprites[20].img = xSDL_LoadBMP("Sprites/Key.bmp");//Here is GUN !
+  sprites[21].img = xSDL_LoadBMP("Sprites/Key.bmp");//Here is GUN !
   set_alpha();
 }
