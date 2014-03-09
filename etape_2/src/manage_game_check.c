@@ -5,10 +5,12 @@
 ** Login   <sadows_g@epitech.net>
 **
 ** Started on  Sat Mar  8 21:40:59 2014 SADOWSKI Geoffroy
-** Last update Sun Mar  9 14:36:06 2014 guerot_a
+** Last update Sun Mar  9 15:13:04 2014 genes_k
 */
 
 #include "epikong.h"
+
+#define LIFETIME 150
 
 void	use_door(t_map* map, t_objlist* objlist, int x, int y)
 {
@@ -76,8 +78,60 @@ void	check_monster_collide(t_objlist* objlist)
     }
 }
 
+void    thrown_left(t_map* map, t_monster *data)
+{
+  unsigned int  x;
+  unsigned int  y;
+
+  x = data->pos_x;
+  y = data->pos_y;
+  if (map->data[y][x - 1] == 'w' || map->data[y][x - 1] == '4'
+      || map->data[y][x - 1] == '5')
+    {
+      data->direction = DIR_RIGHT;
+      return;
+    }
+  data->pos_x = x - 1;
+}
+
+void    thrown_right(t_map* map, t_monster *data)
+{
+  unsigned int  x;
+  unsigned int  y;
+
+  x = data->pos_x;
+  y = data->pos_y;
+  if (map->data[y][x + 1] == 'w' || map->data[y][x + 1] == '4'
+      || map->data[y][x + 1] == '5')
+    {
+      data->direction = DIR_LEFT;
+      return;
+    }
+  data->pos_x = x + 1;
+}
+
+
 void	manage_projectile(t_map* map, t_objlist* objlist)
 {
+  t_list	it;
+  t_projectile	*data;
+  Uint32	time;
+
+  it = list_begin(objlist->projectile_list);
+  while (it != list_end(objlist->projectile_list))
+    {
+      time = SDL_GetTicks();
+      data = it->data;
+      if (time - data->lifetime > PERIOD_LIFE)
+        {
+          if (data->direction == DIR_RIGHT)
+            thrown_right(map, data);
+          else if (data->direction == DIR_LEFT)
+            thrown_left(map, data);
+          data->lasttime_walk = time;
+        }
+      it_incr(it);
+    }
 }
 
 void	manage_game_check(t_map *map, t_objlist *objlist)
