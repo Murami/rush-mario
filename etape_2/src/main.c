@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Fri Mar  7 20:33:05 2014 guerot_a
-** Last update Sun Mar  9 03:00:18 2014 guerot_a
+** Last update Sun Mar  9 03:25:20 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -62,7 +62,7 @@ int	run_stage(char *filename)
   screen = epikong_init(filename, &map, &objlist, &infos_zone);
   still = 1;
   lasttime = SDL_GetTicks();
-  while (still && !objlist.cleared)
+  while (still && !objlist.cleared && objlist.player.life)
     {
       still = manage_game(&map, &objlist);
       draw_game(&map, &objlist, screen, infos_zone);
@@ -71,7 +71,8 @@ int	run_stage(char *filename)
       	SDL_Delay(tmptime - lasttime);
       lasttime = tmptime;
     }
-  if (!still)
+  free_events();
+  if (!still || !objlist.player.life)
     return (0);
   return (1);
 }

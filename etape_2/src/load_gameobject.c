@@ -5,14 +5,14 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 13:15:52 2014 guerot_a
-** Last update Sun Mar  9 02:46:17 2014 guerot_a
+** Last update Sun Mar  9 03:30:40 2014 guerot_a
 */
 
 #include "epikong.h"
 
 void	load_mario(int x, int y, t_objlist* objlist)
 {
-  objlist->player.life = 4;
+  objlist->player.life = 3;
   objlist->player.pos_x = x;
   objlist->player.pos_y = y;
   objlist->player.equiped = 0;

@@ -5,7 +5,7 @@
 ** Login   <sadows_g@epitech.net>
 **
 ** Started on  Sat Mar  8 21:40:59 2014 SADOWSKI Geoffroy
-** Last update Sun Mar  9 03:01:00 2014 SADOWSKI Geoffroy
+** Last update Sun Mar  9 03:31:24 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -20,17 +20,12 @@ void	manage_game_check_xy(t_map *map, t_objlist *objlist, int x, int y)
       map->data[y][x] = '.';
     }
   if (map->data[y][x] == 'o' && objlist->player.key == 1)
-    {
-      printf("Niveau Terminé\n");
-      exit (1);
-    }
+    objlist->cleared = 1;
   if (map->data[y][x] == 'l')
     {
       objlist->player.life++;
       map->data[y][x] = '.';
-      printf("life=%i\n",objlist->player.life);
     }
-    objlist->cleared = 1;
 }
 
 void	check_monster_collide(t_objlist* objlist)
@@ -74,4 +69,5 @@ void	mario_die(t_objlist* objlist)
 {
   objlist->player.lasttime_die = SDL_GetTicks();
   objlist->player.is_die = 1;
+  objlist->player.life--;
 }

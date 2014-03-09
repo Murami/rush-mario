@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 15:01:46 2014 guerot_a
-** Last update Sat Mar  8 23:59:16 2014 guerot_a
+** Last update Sun Mar  9 03:26:23 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -81,6 +81,20 @@ static void	clear_events()
     }
 }
 
+void	free_events()
+{
+  int		i;
+
+  i = 0;
+  while (events[i].func)
+    {
+      events[i].active = 0;
+      events[i].pressed = 0;
+      events[i].released = 0;
+      i++;
+    }
+}
+
 int	manage_event(t_map* map, t_objlist* objlist)
 {
   SDL_Event	event;
@@ -91,10 +105,10 @@ int	manage_event(t_map* map, t_objlist* objlist)
     {
       if (event.type == SDL_QUIT ||
 	  (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_ESCAPE))
-	return (0);
+	  return (0);
       if (event.type == SDL_KEYDOWN)
 	add_pressed(event.key.keysym.sym);
-      if (event.type == SDL_KEYUP)
+      else if (event.type == SDL_KEYUP)
 	add_released(event.key.keysym.sym);
     }
   run_events(map, objlist);
