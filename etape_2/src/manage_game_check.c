@@ -5,23 +5,7 @@
 ** Login   <sadows_g@epitech.net>
 **
 ** Started on  Sat Mar  8 21:40:59 2014 SADOWSKI Geoffroy
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-** Last update Sun Mar  9 15:13:04 2014 genes_k
-=======
-** Last update Sun Mar  9 15:07:56 2014 guerot_a
->>>>>>> 189fe6b1b468714e8d917f03507ac6f939e24491
-=======
-** Last update Sun Mar  9 15:10:35 2014 SADOWSKI Geoffroy
->>>>>>> 92fe2d580e83e52b012addb0f2810b4e429bc0cc
-=======
-** Last update Sun Mar  9 15:46:38 2014 guerot_a
->>>>>>> 1cda97ee16f04547ac1af0813b2653d677e2c983
-=======
-** Last update Sun Mar  9 16:40:31 2014 guerot_a
->>>>>>> 52f3427d4f8f4bd3da5a85367dfbebe366ba14fd
+** Last update Sun Mar  9 16:52:12 2014 genes_k
 */
 
 #include "epikong.h"
