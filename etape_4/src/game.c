@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sun Mar  9 16:11:51 2014 guerot_a
-** Last update Sun Mar  9 18:30:00 2014 guerot_a
+** Last update Sun Mar  9 20:18:33 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -45,7 +45,7 @@ static void	draw_game(t_map* map, t_objlist* objlist, SDL_Surface* screen,
   SDL_Flip(screen);
 }
 
-int	run_stage(const char *filename)
+int	run_stage(const char *filename, int bossstage)
 {
   Uint32	lasttime;
   Uint32	tmptime;
@@ -56,6 +56,7 @@ int	run_stage(const char *filename)
   int		still;
 
   screen = epikong_init(filename, &map, &objlist, &infos_zone);
+  objlist.bosslvl = bossstage;
   still = 1;
   lasttime = SDL_GetTicks();
   while (still && !objlist.cleared && objlist.player.life)

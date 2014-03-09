@@ -5,12 +5,41 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sun Mar  9 16:25:45 2014 guerot_a
-** Last update Sun Mar  9 16:27:33 2014 guerot_a
+** Last update Sun Mar  9 20:38:37 2014 guerot_a
 */
 
 #include "epikong.h"
 
 static void	draw_mario(t_mario* mario, SDL_Surface* screen)
+{
+  int	x;
+  int	y;
+
+  x = mario->pos_x;
+  y = mario->pos_y;
+  if (mario->is_die)
+    {
+      draw_sprite_aligned(get_sprite_by_str("Death"), x, y, screen);
+      return;
+    }
+  if (mario->jumping != NOT_JUMPING)
+    {
+      if (mario->direction_jump == DIR_LEFT ||
+	  mario->direction == DIR_LEFT)
+	draw_sprite_aligned(get_sprite_by_str("MarioJump"), x, y, screen);
+      else if (mario->direction_jump == DIR_RIGHT ||
+	       mario->direction == DIR_RIGHT)
+        draw_sprite_aligned(get_sprite_by_str("MarioJumpBack"),
+			    x, y, screen);
+      return;
+    }
+  if (mario->direction == DIR_LEFT)
+    draw_sprite_aligned(get_sprite_by_str("Mario"), x, y, screen);
+  else if (mario->direction == DIR_RIGHT)
+    draw_sprite_aligned(get_sprite_by_str("MarioBack"), x, y, screen);
+}
+
+static void	draw_boss(t_mario* mario, SDL_Surface* screen)
 {
   int	x;
   int	y;
@@ -89,4 +118,6 @@ void	draw_gameobject(t_objlist* list, SDL_Surface* screen)
       it_incr(it);
     }
   draw_mario(&list->player, screen);
+  if (list->bosslvl)
+    draw_boss(&list->boss, screen);
 }

@@ -5,18 +5,18 @@
 ** Login   <sadows_g@epitech.net>
 **
 ** Started on  Sun Mar  9 00:52:42 2014 SADOWSKI Geoffroy
-** Last update Sun Mar  9 17:02:23 2014 genes_k
+** Last update Sun Mar  9 20:29:31 2014 guerot_a
 */
 
 #include "epikong.h"
 
 const char*	stages[5] =
   {
-    "map/stage9.map",
-    "map/stage16.map",
+    "map/stage15.map",
+    "map/stage1.map",
     "map/stage12.map",
     "map/stage14.map",
-    "map/stage15.map"
+    "map/stage9.map"
   };
 
 static int	manage_stages()
@@ -36,9 +36,12 @@ static int	manage_stages()
       stage = event.key.keysym.sym - SDLK_KP1;
       while (!dead && stage < 5 && stage >= 0)
 	{
-	  dead = !run_stage(stages[stage]);
+	  dead = !run_stage(stages[stage], 0);
+	  if (!dead && stage == 4)
+	    run_stage("map/stage16.map", 1);
 	  stage++;
 	}
+
     }
   return (1);
 }

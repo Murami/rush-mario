@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Fri Mar  7 21:47:03 2014 guerot_a
-** Last update Sun Mar  9 18:48:55 2014 guerot_a
+** Last update Sun Mar  9 20:04:07 2014 guerot_a
 */
 
 #ifndef EPIKONG_H
@@ -40,7 +40,7 @@
 # include "objlist.h"
 
 void		epikong_menu();
-int		run_stage(const char *filename);
+int		run_stage(const char *filename, int bossstage);
 
 /*
 ** x functions
@@ -55,6 +55,7 @@ SDL_Surface*	xSDL_SetVideoMode(int w, int h, int bpp, uint32_t flags);
 ** Load ressources
 */
 
+void		load_boss(int x, int y, t_objlist* objlist);
 void		load_mario(int x, int y, t_objlist* objlist);
 void		load_monster(int x, int y, t_objlist* objlist);
 void		load_monster2(int x, int y, t_objlist* objlist);
