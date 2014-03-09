@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 14:57:21 2014 guerot_a
-** Last update Sun Mar  9 14:29:42 2014 guerot_a
+** Last update Sun Mar  9 15:11:23 2014 SADOWSKI Geoffroy
 */
 
 #include "epikong.h"
@@ -157,4 +157,5 @@ void	mario_fire(t_map* map, t_objlist* objlist)
   proj->pos_y = objlist->player.pos_y;
   proj->direction = direction;
   proj->lifetime = 4;
+  proj->lastthrown = SDL_GetTicks();
 }
