@@ -5,7 +5,11 @@
 ** Login   <sadows_g@epitech.net>
 **
 ** Started on  Sun Mar  9 00:52:42 2014 SADOWSKI Geoffroy
+<<<<<<< HEAD
+** Last update Sun Mar  9 21:18:58 2014 genes_k
+=======
 ** Last update Sun Mar  9 21:06:21 2014 SADOWSKI Geoffroy
+>>>>>>> 375e79cbe0fc1080198108334041c583dcb3eca8
 */
 
 #include "epikong.h"
