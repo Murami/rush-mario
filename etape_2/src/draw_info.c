@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sun Mar  9 01:27:28 2014 guerot_a
-** Last update Sun Mar  9 14:01:27 2014 guerot_a
+** Last update Sun Mar  9 15:04:55 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -41,6 +41,19 @@ void	draw_key(t_objlist* objlist, SDL_Surface* zone_infos)
   SDL_BlitSurface(key, NULL, zone_infos, &rect);
 }
 
+void	draw_gun(t_objlist* objlist, SDL_Surface* zone_infos)
+{
+  SDL_Rect	rect;
+  SDL_Surface*	gun;
+
+  if (!objlist->player.equiped)
+    return;
+  gun = get_sprite_by_str("Gun");
+  rect.x = OFFSET_LEFT_GUN;
+  rect.y = HEIGHT_INFOS / 2 - gun->h / 2;
+  SDL_BlitSurface(gun, NULL, zone_infos, &rect);
+}
+
 void	draw_info(t_objlist *objlist, SDL_Surface* screen, SDL_Surface* zone_infos)
 {
   SDL_Rect	rect;
@@ -51,5 +64,6 @@ void	draw_info(t_objlist *objlist, SDL_Surface* screen, SDL_Surface* zone_infos)
   SDL_FillRect(zone_infos, NULL, SDL_MapRGB(screen->format, 0, 0, 0));
   draw_life(objlist, zone_infos);
   draw_key(objlist, zone_infos);
+  draw_gun(objlist, zone_infos);
   SDL_BlitSurface(zone_infos, NULL, screen, &rect);
 }
