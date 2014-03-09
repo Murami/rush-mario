@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 15:07:11 2014 guerot_a
-** Last update Sun Mar  9 13:37:57 2014 guerot_a
+** Last update Sun Mar  9 15:44:25 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -70,6 +70,7 @@ void	manage_ia(t_map* map, t_objlist* objlist)
 	  else if (data->direction == DIR_LEFT)
 	    bot_left(map, data);
 	  data->lasttime_walk = time;
+	  it = monster_hit_projectile(objlist, it);
 	}
       it_incr(it);
     }
