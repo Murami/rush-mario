@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 14:57:21 2014 guerot_a
-** Last update Sun Mar  9 16:36:55 2014 guerot_a
+** Last update Sun Mar  9 17:15:17 2014 genes_k
 */
 
 #include "epikong.h"
@@ -26,6 +26,8 @@ int	mario_can_walk(t_map* map, int x, int y)
   return (map->data[y + 1][x] == 'w' ||
 	  map->data[y + 1][x] == 's' ||
 	  map->data[y + 1][x] == '7' ||
+	  map->data[y + 1][x] == 'c' ||
+	  map->data[y + 1][x] == 'r' ||
 	  map->data[y][x] == 's');
 }
 
@@ -49,7 +51,7 @@ void	mario_fire(t_map* map, t_objlist* objlist)
   proj->pos_x = objlist->player.pos_x
     + ((direction == DIR_RIGHT) ? 1 : -1);
   proj->pos_y = objlist->player.pos_y;
-  if (strchr("wcr247", map->data[proj->pos_y][proj->pos_x]) != NULL)
+  if (strchr("wcr2457", map->data[proj->pos_y][proj->pos_x]) != NULL)
     return;
   proj->direction = direction;
   proj->lifetime = 4;
