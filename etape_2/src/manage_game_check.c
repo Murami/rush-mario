@@ -5,7 +5,7 @@
 ** Login   <sadows_g@epitech.net>
 **
 ** Started on  Sat Mar  8 21:40:59 2014 SADOWSKI Geoffroy
-** Last update Sun Mar  9 01:06:05 2014 guerot_a
+** Last update Sun Mar  9 01:36:37 2014 SADOWSKI Geoffroy
 */
 
 #include "epikong.h"
@@ -23,6 +23,12 @@ void	manage_game_check_xy(t_map *map, t_objlist *objlist, int x, int y)
     {
       printf("Niveau Terminé\n");
       exit (1);
+    }
+  if (map->data[y][x] == 'l')
+    {
+      objlist->player.life++;
+      map->data[y][x] = '.';
+      printf("life=%i\n",objlist->player.life);
     }
 }
 

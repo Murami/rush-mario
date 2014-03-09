@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 00:11:15 2014 guerot_a
-** Last update Sun Mar  9 00:58:04 2014 guerot_a
+** Last update Sun Mar  9 01:30:48 2014 SADOWSKI Geoffroy
 */
 
 #include "epikong.h"
@@ -33,6 +33,8 @@ t_spritepair sprites[] =
     {'7', "Bot", NULL},
     {'8', "Corner_BR", NULL},
     {'d', "Death", NULL},
+    {'g', "Gun", NULL},
+    {'l', "Life", NULL},
     {'\0', "", NULL}
   };
 
@@ -69,5 +71,7 @@ void	load_sprites()
   sprites[16].img = xSDL_LoadBMP("Sprites/Pipe_Bot.bmp");
   sprites[17].img = xSDL_LoadBMP("Sprites/Pipe_Corner_BR.bmp");
   sprites[18].img = xSDL_LoadBMP("Sprites/Mario_Death.bmp");
+  //sprites[19].img = xSDL_LoadBMP("Sprites/.bmp");
+  sprites[20].img = xSDL_LoadBMP("Sprites/Life.bmp");
   set_alpha();
 }

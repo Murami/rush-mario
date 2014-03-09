@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 12:52:55 2014 guerot_a
-** Last update Sat Mar  8 20:55:57 2014 genes_k
+** Last update Sun Mar  9 01:41:04 2014 SADOWSKI Geoffroy
 */
 
 #include "epikong.h"
@@ -19,6 +19,8 @@ char	valid_char[] =
     'i',
     's',
     'm',
+    'l',
+    'g',
     '1',
     '2',
     '3',
