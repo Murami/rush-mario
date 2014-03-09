@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 13:21:49 2014 guerot_a
-** Last update Sun Mar  9 15:10:26 2014 SADOWSKI Geoffroy
+** Last update Sun Mar  9 15:16:48 2014 guerot_a
 */
 
 #ifndef OBJLIST_H
@@ -69,7 +69,7 @@ typedef struct	s_projectile
   int		pos_x;
   int		pos_y;
   int		lifetime;
-  Uint32	lastthrown;
+  Uint32	lastrun;
   int		direction;
 }		t_projectile;
 

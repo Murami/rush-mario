@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Fri Mar  7 21:47:03 2014 guerot_a
-** Last update Sun Mar  9 15:04:42 2014 guerot_a
+** Last update Sun Mar  9 15:44:11 2014 guerot_a
 */
 
 #ifndef EPIKONG_H
@@ -75,6 +75,7 @@ void		manage_physics(t_map* map, t_objlist* objlist);
 void		manage_ia(t_map* map, t_objlist* objlist);
 void		manage_game_check(t_map *map, t_objlist *objlist);
 void		manage_game_check_xy(t_map *map, t_objlist *objlist, int x, int y);
+t_listit	monster_hit_projectile(t_objlist* objlist, t_listit monster_it);
 
 /*
 ** Mario events/actions
