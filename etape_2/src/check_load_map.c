@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 12:52:55 2014 guerot_a
-** Last update Sun Mar  9 14:57:25 2014 guerot_a
+** Last update Sun Mar  9 16:45:04 2014 genes_k
 */
 
 #include "epikong.h"
@@ -30,6 +30,10 @@ const char	valid_char[] =
     '7',
     '8',
     'M',
+    'c',
+    'r',
+    'B',
+    't',
     '\0'
   };
 
