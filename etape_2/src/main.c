@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Fri Mar  7 20:33:05 2014 guerot_a
-** Last update Sun Mar  9 03:25:20 2014 guerot_a
+** Last update Sun Mar  9 14:21:30 2014 SADOWSKI Geoffroy
 */
 
 #include "epikong.h"
@@ -43,10 +43,10 @@ void	draw_game(t_map* map, t_objlist* objlist, SDL_Surface* screen, SDL_Surface*
 char*	stages[5] =
   {
     "map/stage9.map",
-    "map/stage9.map",
-    "map/stage9.map",
-    "map/stage9.map",
-    "map/stage1.map"
+    "map/stage1.map",
+    "map/stage12.map",
+    "map/stage14.map",
+    "map/stage15.map"
   };
 
 int	run_stage(char *filename)
