@@ -5,7 +5,11 @@
 ** Login   <sadows_g@epitech.net>
 **
 ** Started on  Sat Mar  8 21:40:59 2014 SADOWSKI Geoffroy
+<<<<<<< HEAD
+** Last update Sun Mar  9 01:36:37 2014 SADOWSKI Geoffroy
+=======
 ** Last update Sun Mar  9 02:46:40 2014 guerot_a
+>>>>>>> 7adf95aa42b6c955e342432a0c7ef8ecb152d44c
 */
 
 #include "epikong.h"
@@ -20,7 +24,20 @@ void	manage_game_check_xy(t_map *map, t_objlist *objlist, int x, int y)
       map->data[y][x] = '.';
     }
   if (map->data[y][x] == 'o' && objlist->player.key == 1)
+<<<<<<< HEAD
+    {
+      printf("Niveau Terminé\n");
+      exit (1);
+    }
+  if (map->data[y][x] == 'l')
+    {
+      objlist->player.life++;
+      map->data[y][x] = '.';
+      printf("life=%i\n",objlist->player.life);
+    }
+=======
     objlist->cleared = 1;
+>>>>>>> 7adf95aa42b6c955e342432a0c7ef8ecb152d44c
 }
 
 void	check_monster_collide(t_objlist* objlist)
