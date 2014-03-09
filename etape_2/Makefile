@@ -5,7 +5,7 @@
 ## Login   <guerot_a@epitech.net>
 ## 
 ## Started on  Sun Mar  2 18:06:05 2014 anthony guerot
-## Last update Sun Mar  9 14:10:01 2014 guerot_a
+## Last update Sun Mar  9 16:41:40 2014 guerot_a
 ##
 
 ## FILES
@@ -32,7 +32,16 @@ SRC		=	main			\
 			manage_physic		\
 			mario			\
 			manage_game_check	\
-			draw_info
+			draw_info		\
+			menu			\
+			game			\
+			draw_gameobj		\
+			event			\
+			mario_jump_phys		\
+			mario_move		\
+			mario_jump		\
+			manage_mario		\
+			manage_projectile
 
 
 SRC_EXT		=	.c

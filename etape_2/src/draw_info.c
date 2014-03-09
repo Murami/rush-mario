@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sun Mar  9 01:27:28 2014 guerot_a
-** Last update Sun Mar  9 15:04:55 2014 guerot_a
+** Last update Sun Mar  9 15:59:28 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -54,7 +54,8 @@ void	draw_gun(t_objlist* objlist, SDL_Surface* zone_infos)
   SDL_BlitSurface(gun, NULL, zone_infos, &rect);
 }
 
-void	draw_info(t_objlist *objlist, SDL_Surface* screen, SDL_Surface* zone_infos)
+void	draw_info(t_objlist *objlist, SDL_Surface* screen,
+		  SDL_Surface* zone_infos)
 {
   SDL_Rect	rect;
 
