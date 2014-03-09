@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Fri Mar  7 21:47:03 2014 guerot_a
-** Last update Sun Mar  9 21:16:46 2014 guerot_a
+** Last update Sun Mar  9 21:41:43 2014 guerot_a
 */
 
 #ifndef EPIKONG_H
@@ -97,6 +97,7 @@ void		manage_game_check(t_map *map, t_objlist *objlist);
 void		manage_game_check_xy(t_map *map, t_objlist *objlist, int x, int y);
 t_listit	monster_hit_projectile(t_objlist* objlist, t_listit monster_it);
 void		manage_projectile(t_map* map, t_objlist* objlist);
+void		check_hit_players(t_objlist*, t_projectile*);
 
 /*
 ** Mario events/actions
@@ -129,7 +130,6 @@ void		boss_jumping(t_map* map, t_objlist* objlist);
 void		boss_takekey(t_map* map, t_objlist* objlist);
 void		boss_die(t_objlist* objlist);
 void		boss_fire(t_map* map, t_objlist* objlist);
-
 
 /*
 ** Interactions with game objects
