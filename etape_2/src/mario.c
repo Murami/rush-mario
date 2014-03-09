@@ -5,11 +5,10 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 14:57:21 2014 guerot_a
-** Last update Sun Mar  9 00:54:04 2014 guerot_a
+** Last update Sun Mar  9 13:37:41 2014 guerot_a
 */
 
 #include "epikong.h"
-#define MARIO_PERIOD_WALK	60
 
 int	mario_manage_walk_time(t_objlist* objlist)
 {

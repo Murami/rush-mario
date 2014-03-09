@@ -5,12 +5,12 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 12:52:55 2014 guerot_a
-** Last update Sun Mar  9 01:41:04 2014 SADOWSKI Geoffroy
+** Last update Sun Mar  9 13:36:44 2014 guerot_a
 */
 
 #include "epikong.h"
 
-char	valid_char[] =
+const char	valid_char[] =
   {
     '.',
     'o',

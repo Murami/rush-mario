@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 13:52:17 2014 guerot_a
-** Last update Sun Mar  9 02:59:43 2014 SADOWSKI Geoffroy
+** Last update Sun Mar  9 13:25:14 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -84,11 +84,11 @@ void	draw_gameobject(t_objlist* list, SDL_Surface* screen)
 {
   t_listit	it;
 
-  draw_mario(&list->player, screen);
   it = list_begin(list->monster_list);
   while (it != list_end(list->monster_list))
     {
       draw_monster(it->data, screen);
       it_incr(it);
     }
+  draw_mario(&list->player, screen);
 }

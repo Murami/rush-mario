@@ -5,13 +5,10 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 15:05:50 2014 guerot_a
-** Last update Sun Mar  9 00:37:52 2014 guerot_a
+** Last update Sun Mar  9 13:36:05 2014 guerot_a
 */
 
 #include "epikong.h"
-
-#define PERIOD_FALL	75
-#define PERIOD_JUMP	75
 
 void	mario_falling(t_map* map, t_objlist* objlist)
 {

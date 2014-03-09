@@ -5,12 +5,10 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 15:07:11 2014 guerot_a
-** Last update Sat Mar  8 23:50:56 2014 guerot_a
+** Last update Sun Mar  9 13:37:57 2014 guerot_a
 */
 
 #include "epikong.h"
-
-#define PERIOD_WALK     150
 
 int     bot_can_walk(t_map* map, int x, int y)
 {

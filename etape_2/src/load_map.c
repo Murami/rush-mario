@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 00:02:15 2014 guerot_a
-** Last update Sat Mar  8 21:01:50 2014 genes_k
+** Last update Sun Mar  9 13:56:11 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -46,7 +46,7 @@ void	load_map(char *filename, t_map* map)
   map->width = strlen(list->next->data);
   if (!map->width)
     xabort("error: invalid map: invalid line");
-  map->data = xmalloc((map->width + 1) * sizeof(char*));
+  map->data = xmalloc((map->height + 1) * sizeof(char*));
   it = list_begin(list);
   i = 0;
   while (it != list_end(list))

@@ -5,12 +5,10 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 00:11:15 2014 guerot_a
-** Last update Sun Mar  9 01:30:48 2014 SADOWSKI Geoffroy
+** Last update Sun Mar  9 13:38:59 2014 guerot_a
 */
 
 #include "epikong.h"
-
-#define COLOR_ALPHA SDL_MapRGB(sprites[i].img->format, 255, 0, 186)
 
 t_spritepair sprites[] =
   {
@@ -33,8 +31,8 @@ t_spritepair sprites[] =
     {'7', "Bot", NULL},
     {'8', "Corner_BR", NULL},
     {'d', "Death", NULL},
-    {'g', "Gun", NULL},
     {'l', "Life", NULL},
+    {'g', "Gun", NULL},
     {'\0', "", NULL}
   };
 
@@ -71,7 +69,7 @@ void	load_sprites()
   sprites[16].img = xSDL_LoadBMP("Sprites/Pipe_Bot.bmp");
   sprites[17].img = xSDL_LoadBMP("Sprites/Pipe_Corner_BR.bmp");
   sprites[18].img = xSDL_LoadBMP("Sprites/Mario_Death.bmp");
-  //sprites[19].img = xSDL_LoadBMP("Sprites/.bmp");
-  sprites[20].img = xSDL_LoadBMP("Sprites/Life.bmp");
+  sprites[19].img = xSDL_LoadBMP("Sprites/Life.bmp");
+  sprites[20].img = xSDL_LoadBMP("Sprites/Life.bmp");//Here is GUN !
   set_alpha();
 }

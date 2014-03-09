@@ -5,26 +5,53 @@
 ** Login   <sadows_g@epitech.net>
 **
 ** Started on  Sat Mar  8 21:40:59 2014 SADOWSKI Geoffroy
-** Last update Sun Mar  9 03:31:24 2014 guerot_a
+** Last update Sun Mar  9 13:57:13 2014 guerot_a
 */
 
 #include "epikong.h"
 
-#define DIR_DELAY	1000
+void	use_door(t_map* map, t_objlist* objlist, int x, int y)
+{
+  objlist->cleared = objlist->player.key;
+}
+
+void	take_key(t_map* map, t_objlist* objlist, int x, int y)
+{
+  objlist->player.key = 1;
+  map->data[y][x] = '.';
+}
+
+void	take_life(t_map* map, t_objlist* objlist, int x, int y)
+{
+  objlist->player.life++;
+  map->data[y][x] = '.';
+}
+
+void	take_gun(t_map* map, t_objlist* objlist, int x, int y)
+{
+  objlist->player.equiped = 1;
+  map->data[y][x] = '.';
+}
+
+t_gameaction	actions[] =
+  {
+    {'k', take_key},
+    {'l', take_life},
+    {'g', take_gun},
+    {'o', use_door},
+    {'\0', NULL}
+  };
 
 void	manage_game_check_xy(t_map *map, t_objlist *objlist, int x, int y)
 {
-  if (map->data[y][x] == 'k')
+  int	i;
+
+  i = 0;
+  while (actions[i].func)
     {
-      objlist->player.key = 1;
-      map->data[y][x] = '.';
-    }
-  if (map->data[y][x] == 'o' && objlist->player.key == 1)
-    objlist->cleared = 1;
-  if (map->data[y][x] == 'l')
-    {
-      objlist->player.life++;
-      map->data[y][x] = '.';
+      if (actions[i].key == map->data[y][x])
+	actions[i].func(map, objlist, x, y);
+      i++;
     }
 }
 

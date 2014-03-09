@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Fri Mar  7 21:47:03 2014 guerot_a
-** Last update Sun Mar  9 03:26:08 2014 guerot_a
+** Last update Sun Mar  9 14:02:04 2014 guerot_a
 */
 
 #ifndef EPIKONG_H
@@ -14,9 +14,18 @@
 # define _POSIX_C_SOURCE
 # define _XOPEN_SOURCE
 
-# define CASE_SIZE	16
-# define PERIOD_FPS	(1000 / 50)
-# define HEIGHT_INFOS	50
+# define CASE_SIZE		16
+# define PERIOD_FPS		(1000 / 50)
+# define HEIGHT_INFOS		50
+# define OFFSET_LEFT_LIFE	20
+# define PADDING_LIFE		10
+# define PERIOD_FALL		75
+# define PERIOD_JUMP		75
+# define PERIOD_WALK		150
+# define MARIO_PERIOD_WALK	60
+# define DIR_DELAY		1000
+# define COLOR_ALPHA		SDL_MapRGB(sprites[i].img->format, 255, 0, 186)
+# define OFFSET_LEFT_KEY	200
 
 # include "dependencies.h"
 
@@ -60,6 +69,11 @@ void	mario_jump(t_map* map, t_objlist* objlist);
 void	mario_jump_left(t_map* map, t_objlist* objlist);
 void	mario_jump_right(t_map* map, t_objlist* objlist);
 void	mario_die(t_objlist* objlist);
+
+void	take_gun(t_map* map, t_objlist* list, int x, int y);
+void	take_life(t_map* map, t_objlist* list, int x, int y);
+void	take_key(t_map* map, t_objlist* list, int x, int y);
+void	use_door(t_map* map, t_objlist* list, int x, int y);
 
 void	free_events();
 
