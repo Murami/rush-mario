@@ -7,6 +7,7 @@
 ** Started on  Sat Mar  8 00:11:15 2014 guerot_a
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ** Last update Sun Mar  9 15:05:24 2014 genes_k
 =======
 ** Last update Sun Mar  9 15:00:09 2014 guerot_a
@@ -14,6 +15,9 @@
 =======
 ** Last update Sun Mar  9 15:24:50 2014 guerot_a
 >>>>>>> 1cda97ee16f04547ac1af0813b2653d677e2c983
+=======
+** Last update Sun Mar  9 16:09:29 2014 guerot_a
+>>>>>>> 52f3427d4f8f4bd3da5a85367dfbebe366ba14fd
 */
 
 #include "epikong.h"

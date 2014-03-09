@@ -5,12 +5,12 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 00:02:15 2014 guerot_a
-** Last update Sun Mar  9 13:56:11 2014 guerot_a
+** Last update Sun Mar  9 16:17:01 2014 guerot_a
 */
 
 #include "epikong.h"
 
-static t_list	load_file(char *filename)
+static t_list	load_file(const char *filename)
 {
   FILE*		mapfile;
   char*		str;
@@ -33,7 +33,7 @@ static t_list	load_file(char *filename)
   return (list);
 }
 
-void	load_map(char *filename, t_map* map)
+void	load_map(const char *filename, t_map* map)
 {
   t_list	list;
   t_listit	it;
