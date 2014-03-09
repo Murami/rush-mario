@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 14:57:21 2014 guerot_a
-** Last update Sun Mar  9 13:37:41 2014 guerot_a
+** Last update Sun Mar  9 14:29:42 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -133,4 +133,28 @@ void	mario_jump_left(t_map* map, t_objlist* objlist)
     return;
   objlist->player.jumping = JUMP_STEP1;
   objlist->player.direction_jump = DIR_LEFT;
+}
+
+void	mario_fire(t_map* map, t_objlist* objlist)
+{
+  Uint32	currtime;
+  t_projectile	*proj;
+  int		direction;
+
+  (void) map;
+  if (!objlist->player.equiped || objlist->player.is_die)
+    return;
+  currtime = SDL_GetTicks();
+  if (currtime - objlist->player.lasttime_fire < PERIOD_FIRE)
+    return;
+  objlist->player.lasttime_fire = currtime;
+  proj = xmalloc(sizeof(t_projectile));
+  direction = objlist->player.direction;
+  if (objlist->player.jumping && objlist->player.direction_jump)
+    direction = objlist->player.direction_jump;
+  proj->pos_x = objlist->player.pos_x +
+    ((direction == DIR_RIGHT) ? 1 : -1);
+  proj->pos_y = objlist->player.pos_y;
+  proj->direction = direction;
+  proj->lifetime = 4;
 }

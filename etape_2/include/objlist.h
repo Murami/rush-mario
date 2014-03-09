@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 13:21:49 2014 guerot_a
-** Last update Sun Mar  9 02:45:39 2014 guerot_a
+** Last update Sun Mar  9 14:17:59 2014 guerot_a
 */
 
 #ifndef OBJLIST_H
@@ -44,6 +44,7 @@ typedef struct	s_mario
   Uint32	lasttime_fall;
   Uint32	lasttime_jump;
   Uint32	lasttime_walk;
+  Uint32	lasttime_fire;
 }		t_mario;
 
 typedef struct	s_spawn
@@ -60,9 +61,18 @@ typedef struct	s_monster
   Uint32	lasttime_walk;
 }		t_monster;
 
+typedef struct	s_projectile
+{
+  int		pos_x;
+  int		pos_y;
+  int		lifetime;
+  int		direction;
+}		t_projectile;
+
 typedef struct	s_objlist
 {
   t_list	monster_list;
+  t_list	projectile_list;
   t_mario	player;
   t_spawn	spawn;
   int		cleared;

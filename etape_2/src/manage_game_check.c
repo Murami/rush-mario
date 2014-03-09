@@ -5,13 +5,17 @@
 ** Login   <sadows_g@epitech.net>
 **
 ** Started on  Sat Mar  8 21:40:59 2014 SADOWSKI Geoffroy
-** Last update Sun Mar  9 13:57:13 2014 guerot_a
+** Last update Sun Mar  9 14:31:55 2014 guerot_a
 */
 
 #include "epikong.h"
 
 void	use_door(t_map* map, t_objlist* objlist, int x, int y)
 {
+  (void) map;
+  (void) x;
+  (void) y;
+
   objlist->cleared = objlist->player.key;
 }
 
@@ -71,6 +75,23 @@ void	check_monster_collide(t_objlist* objlist)
       it_incr(it);
     }
 }
+
+/* void	manage_projectile() */
+/* { */
+/*   t_listit	it; */
+
+/*   it = list_begin(objlist->monster_list); */
+/*   while (it != list_end(objlist->monster_list)) */
+/*     { */
+/*       if (((t_monster*)it->data)->pos_x == objlist->player.pos_x && */
+/* 	  ((t_monster*)it->data)->pos_y == objlist->player.pos_y) */
+/* 	{ */
+/* 	  mario_die(objlist); */
+/* 	  return; */
+/* 	} */
+/*       it_incr(it); */
+/*     } */
+/* } */
 
 void	manage_game_check(t_map *map, t_objlist *objlist)
 {
