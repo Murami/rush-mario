@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 13:15:52 2014 guerot_a
-** Last update Sun Mar  9 00:47:30 2014 guerot_a
+** Last update Sun Mar  9 02:46:17 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -27,6 +27,7 @@ void	load_mario(int x, int y, t_objlist* objlist)
   objlist->player.key = 0;
   objlist->spawn.pos_x = x;
   objlist->spawn.pos_y = y;
+  objlist->cleared = 0;
 }
 
 void	load_monster(int x, int y, t_objlist* objlist)

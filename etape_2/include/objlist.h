@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 13:21:49 2014 guerot_a
-** Last update Sun Mar  9 00:43:41 2014 guerot_a
+** Last update Sun Mar  9 02:45:39 2014 guerot_a
 */
 
 #ifndef OBJLIST_H
@@ -65,6 +65,7 @@ typedef struct	s_objlist
   t_list	monster_list;
   t_mario	player;
   t_spawn	spawn;
+  int		cleared;
 }		t_objlist;
 
 #endif /* OBJLIST_H */
