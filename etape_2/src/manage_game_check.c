@@ -6,7 +6,11 @@
 **
 ** Started on  Sat Mar  8 21:40:59 2014 SADOWSKI Geoffroy
 <<<<<<< HEAD
+<<<<<<< HEAD
 ** Last update Sun Mar  9 15:13:04 2014 genes_k
+=======
+** Last update Sun Mar  9 15:07:56 2014 guerot_a
+>>>>>>> 189fe6b1b468714e8d917f03507ac6f939e24491
 =======
 ** Last update Sun Mar  9 15:10:35 2014 SADOWSKI Geoffroy
 >>>>>>> 92fe2d580e83e52b012addb0f2810b4e429bc0cc
