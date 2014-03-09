@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Fri Mar  7 20:33:05 2014 guerot_a
-** Last update Sun Mar  9 14:39:56 2014 SADOWSKI Geoffroy
+** Last update Sun Mar  9 15:58:10 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -90,7 +90,7 @@ int	manage_stages()
       if (event.key.keysym.sym == SDLK_ESCAPE)
 	return (0);
       stage = event.key.keysym.sym - SDLK_KP1;
-      while (!dead && stage < 5)
+      while (!dead && stage < 5 && stage >= 0)
 	{
 	  dead = !run_stage(stages[stage]);
 	  stage++;

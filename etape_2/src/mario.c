@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 14:57:21 2014 guerot_a
-** Last update Sun Mar  9 15:23:13 2014 guerot_a
+** Last update Sun Mar  9 15:57:36 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -155,6 +155,13 @@ void	mario_fire(t_map* map, t_objlist* objlist)
   proj->pos_x = objlist->player.pos_x +
     ((direction == DIR_RIGHT) ? 1 : -1);
   proj->pos_y = objlist->player.pos_y;
+  if (map->data[proj->pos_y][proj->pos_x] == 'w' ||
+      map->data[proj->pos_y][proj->pos_x] == 'c' ||
+      map->data[proj->pos_y][proj->pos_x] == 'r' ||
+      map->data[proj->pos_y][proj->pos_x] == '2' ||
+      map->data[proj->pos_y][proj->pos_x] == '4' ||
+      map->data[proj->pos_y][proj->pos_x] == '7')
+    return;
   proj->direction = direction;
   proj->lifetime = 4;
   proj->lastrun = SDL_GetTicks();
