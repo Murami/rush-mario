@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 14:57:21 2014 guerot_a
-** Last update Sun Mar  9 00:04:58 2014 guerot_a
+** Last update Sun Mar  9 00:54:04 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -35,7 +35,7 @@ void	mario_left(t_map* map, t_objlist* objlist)
   unsigned int	x;
   unsigned int	y;
 
-  if (!mario_manage_walk_time(objlist))
+  if (!mario_manage_walk_time(objlist) || objlist->player.is_die)
     return;
   x = objlist->player.pos_x;
   y = objlist->player.pos_y;
@@ -51,7 +51,7 @@ void	mario_right(t_map* map, t_objlist* objlist)
   unsigned int	x;
   unsigned int	y;
 
-  if (!mario_manage_walk_time(objlist))
+  if (!mario_manage_walk_time(objlist) || objlist->player.is_die)
     return;
   x = objlist->player.pos_x;
   y = objlist->player.pos_y;
@@ -67,7 +67,7 @@ void	mario_up(t_map* map, t_objlist* objlist)
   int	x;
   int	y;
 
-  if (!mario_manage_walk_time(objlist))
+  if (!mario_manage_walk_time(objlist) || objlist->player.is_die)
     return;
   x = objlist->player.pos_x;
   y = objlist->player.pos_y;
@@ -82,7 +82,7 @@ void	mario_down(t_map* map, t_objlist* objlist)
   int	x;
   int	y;
 
-  if (!mario_manage_walk_time(objlist))
+  if (!mario_manage_walk_time(objlist) || objlist->player.is_die)
     return;
   x = objlist->player.pos_x;
   y = objlist->player.pos_y + 1;
@@ -98,8 +98,9 @@ void	mario_jump(t_map* map, t_objlist* objlist)
 
   x = objlist->player.pos_x;
   y = objlist->player.pos_y;
-  if (map->data[y + 1][x] != 'w' && map->data[y + 1][x] != '7' &&
-      map->data[y + 1][x] != 's' && map->data[y][x] != 's')
+  if ((map->data[y + 1][x] != 'w' && map->data[y + 1][x] != '7' &&
+       map->data[y + 1][x] != 's' && map->data[y][x] != 's') ||
+      objlist->player.is_die)
     return;
   objlist->player.jumping = JUMP_STEP1;
   objlist->player.direction_jump = DIR_NONE;
@@ -112,8 +113,9 @@ void	mario_jump_right(t_map* map, t_objlist* objlist)
 
   x = objlist->player.pos_x;
   y = objlist->player.pos_y;
-  if (map->data[y + 1][x] != 'w' && map->data[y + 1][x] != '7' &&
-      map->data[y + 1][x] != 's' && map->data[y][x] != 's')
+  if ((map->data[y + 1][x] != 'w' && map->data[y + 1][x] != '7' &&
+       map->data[y + 1][x] != 's' && map->data[y][x] != 's') ||
+      objlist->player.is_die)
     return;
   objlist->player.jumping = JUMP_STEP1;
   objlist->player.direction_jump = DIR_RIGHT;
@@ -126,8 +128,9 @@ void	mario_jump_left(t_map* map, t_objlist* objlist)
 
   x = objlist->player.pos_x;
   y = objlist->player.pos_y;
-  if (map->data[y + 1][x] != 'w' && map->data[y + 1][x] != '7'&&
-      map->data[y + 1][x] != 's' && map->data[y][x] != 's')
+  if ((map->data[y + 1][x] != 'w' && map->data[y + 1][x] != '7'&&
+       map->data[y + 1][x] != 's' && map->data[y][x] != 's') ||
+      objlist->player.is_die)
     return;
   objlist->player.jumping = JUMP_STEP1;
   objlist->player.direction_jump = DIR_LEFT;
