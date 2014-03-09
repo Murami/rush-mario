@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 00:11:15 2014 guerot_a
-** Last update Sun Mar  9 14:45:03 2014 genes_k
+** Last update Sun Mar  9 15:05:24 2014 genes_k
 */
 
 #include "epikong.h"
@@ -36,6 +36,12 @@ t_spritepair sprites[] =
     {'p', "Projectile", NULL},
     {'M', "Monster2", NULL},
     {'M', "MonsterBack2", NULL},
+    {'c', "Cloud", NULL},
+    {'r', "Iron", NULL},
+    {'x', "Explosion", NULL},
+    {'B', "Boss", NULL},
+    {'B', "BossBack", NULL},
+    {'t', "Trap_up", NULL},
     {'\0', "", NULL}
   };
 
@@ -77,5 +83,11 @@ void	load_sprites()
   sprites[21].img = xSDL_LoadBMP("Sprites/Key.bmp");//Here is GUN !
   sprites[22].img = xSDL_LoadBMP("Sprites/Monster.bmp");
   sprites[23].img = xSDL_LoadBMP("Sprites/Monster_Back.bmp");
+  sprites[24].img = xSDL_LoadBMP("Sprites/Cloud_Platform.bmp");
+  sprites[25].img = xSDL_LoadBMP("Sprites/Iron_Platform.bmp");
+  sprites[26].img = xSDL_LoadBMP("Sprites/Explosion.bmp");
+  sprites[27].img = xSDL_LoadBMP("Sprites/Anti_Mario.bmp");
+  sprites[28].img = xSDL_LoadBMP("Sprites/Anti_Mario_Back.bmp");
+  sprites[29].img = xSDL_LoadBMP("Sprites/Trap_Up.bmp");
   set_alpha();
 }
