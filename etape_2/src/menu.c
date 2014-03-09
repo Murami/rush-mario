@@ -6,7 +6,7 @@
 **
 ** Started on  Sun Mar  9 00:52:42 2014 SADOWSKI Geoffroy
 <<<<<<< HEAD
-** Last update Sun Mar  9 21:56:20 2014 genes_k
+** Last update Sun Mar  9 22:20:04 2014 genes_k
 =======
 ** Last update Sun Mar  9 21:06:21 2014 SADOWSKI Geoffroy
 >>>>>>> 375e79cbe0fc1080198108334041c583dcb3eca8
@@ -16,7 +16,7 @@
 
 const char*	stages[5] =
   {
-    "map/boss.map",
+    "map/stage1.map",
     "map/stage2.map",
     "map/stage3.map",
     "map/stage4.map",

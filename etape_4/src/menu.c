@@ -5,18 +5,18 @@
 ** Login   <sadows_g@epitech.net>
 **
 ** Started on  Sun Mar  9 00:52:42 2014 SADOWSKI Geoffroy
-** Last update Sun Mar  9 20:29:31 2014 guerot_a
+** Last update Sun Mar  9 22:25:13 2014 genes_k
 */
 
 #include "epikong.h"
 
 const char*	stages[5] =
   {
-    "map/stage15.map",
     "map/stage1.map",
-    "map/stage12.map",
-    "map/stage14.map",
-    "map/stage9.map"
+    "map/stage2.map",
+    "map/stage3.map",
+    "map/stage4.map",
+    "map/stage5.map"
   };
 
 static int	manage_stages()
