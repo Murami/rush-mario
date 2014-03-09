@@ -5,7 +5,7 @@
 ** Login   <sadows_g@epitech.net>
 **
 ** Started on  Sat Mar  8 21:40:59 2014 SADOWSKI Geoffroy
-** Last update Sun Mar  9 15:01:01 2014 SADOWSKI Geoffroy
+** Last update Sun Mar  9 15:07:56 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -129,7 +129,6 @@ void	manage_projectile(t_map* map, t_objlist* objlist)
           else if (data->direction == DIR_LEFT)
             thrown_left(map, data);
           data->lasttime_walk = time;
-	  
         }
       it_incr(it);
     }
