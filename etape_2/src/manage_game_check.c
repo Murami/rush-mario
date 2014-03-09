@@ -5,12 +5,12 @@
 ** Login   <sadows_g@epitech.net>
 **
 ** Started on  Sat Mar  8 21:40:59 2014 SADOWSKI Geoffroy
-** Last update Sun Mar  9 15:07:50 2014 SADOWSKI Geoffroy
+** Last update Sun Mar  9 15:10:35 2014 SADOWSKI Geoffroy
 */
 
 #include "epikong.h"
 
-#define LIFETIME 150
+#define PERIOD_THROWN 50
 
 void	use_door(t_map* map, t_objlist* objlist, int x, int y)
 {
@@ -122,13 +122,13 @@ void	manage_projectile(t_map* map, t_objlist* objlist)
     {
       time = SDL_GetTicks();
       data = it->data;
-      if (time - data->lifetime > PERIOD_LIFE && data->lifetime > 0)
+      if (time - data->lastthrown > PERIOD_THROWN && data->lifetime > 0)
         {
           if (data->direction == DIR_RIGHT)
             thrown_right(map, data);
           else if (data->direction == DIR_LEFT)
             thrown_left(map, data);
-          data->lasttime_walk = time;
+          data->lasthrown = time;
 	  data->lifetime--;
         }
       it_incr(it);
