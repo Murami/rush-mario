@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 13:21:49 2014 guerot_a
-** Last update Sun Mar  9 18:35:23 2014 guerot_a
+** Last update Sun Mar  9 20:03:18 2014 guerot_a
 */
 
 #ifndef OBJLIST_H
@@ -74,10 +74,13 @@ typedef struct	s_projectile
 
 typedef struct	s_objlist
 {
+  int		bosslvl;
   t_list	monster_list;
   t_list	projectile_list;
   t_mario	player;
+  t_mario	boss;
   t_spawn	spawn;
+  t_spawn	spawn_boss;
   int		cleared;
   Uint32	lastiamove;
   int		cyclecount;

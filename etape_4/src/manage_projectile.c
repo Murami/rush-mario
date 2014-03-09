@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sun Mar  9 16:38:12 2014 guerot_a
-** Last update Sun Mar  9 16:39:30 2014 guerot_a
+** Last update Sun Mar  9 21:11:54 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -42,6 +42,16 @@ static void    thrown_right(t_map* map, t_projectile *data)
   data->pos_x = x + 1;
 }
 
+static void	check_hit_players(t_objlist* objlist, t_projectile* proj)
+{
+  if (objlist->player.pos_x == proj->pos_x &&
+      objlist->player.pos_y == proj->pos_y)
+    mario_die(objlist);
+  else if (objlist->boss.pos_x == proj->pos_x &&
+	   objlist->boss.pos_y == proj->pos_y)
+    boss_die(objlist);
+}
+
 static t_listit	projectile_hit_monster(t_objlist* objlist, t_listit projit)
 {
   t_listit	it;
@@ -61,6 +71,7 @@ static t_listit	projectile_hit_monster(t_objlist* objlist, t_listit projit)
 	  list_erase(it->prev);
 	  return (projit);
 	}
+      check_hit_players(objlist, proj);
     }
   return (projit);
 }

@@ -5,14 +5,18 @@
 ** Login   <sadows_g@epitech.net>
 **
 ** Started on  Sun Mar  9 00:52:42 2014 SADOWSKI Geoffroy
-** Last update Sun Mar  9 20:41:46 2014 genes_k
+<<<<<<< HEAD
+** Last update Sun Mar  9 21:18:58 2014 genes_k
+=======
+** Last update Sun Mar  9 21:06:21 2014 SADOWSKI Geoffroy
+>>>>>>> 375e79cbe0fc1080198108334041c583dcb3eca8
 */
 
 #include "epikong.h"
 
 const char*	stages[5] =
   {
-    "map/boss.map",
+    "map/stage17.map",
     "map/stage16.map",
     "map/stage12.map",
     "map/stage14.map",

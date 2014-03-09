@@ -5,7 +5,7 @@
 ## Login   <guerot_a@epitech.net>
 ## 
 ## Started on  Sun Mar  2 18:06:05 2014 anthony guerot
-## Last update Sun Mar  9 16:41:40 2014 guerot_a
+## Last update Sun Mar  9 21:11:12 2014 guerot_a
 ##
 
 ## FILES
@@ -41,7 +41,13 @@ SRC		=	main			\
 			mario_move		\
 			mario_jump		\
 			manage_mario		\
-			manage_projectile
+			manage_projectile	\
+			load_boss		\
+			boss			\
+			boss_jump		\
+			boss_move		\
+			boss_jump_phys		\
+			manage_boss
 
 
 SRC_EXT		=	.c
