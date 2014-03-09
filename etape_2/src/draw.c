@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 13:52:17 2014 guerot_a
-** Last update Sun Mar  9 13:25:14 2014 guerot_a
+** Last update Sun Mar  9 14:52:04 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -70,14 +70,35 @@ void	draw_mario(t_mario* mario, SDL_Surface* screen)
 
 void	draw_monster(t_monster* monster, SDL_Surface *screen)
 {
-  if (monster->direction == DIR_RIGHT)
-    draw_sprite_aligned(get_sprite_by_str("Monster"),
-			monster->pos_x, monster->pos_y,
-			screen);
-  else if (monster->direction == DIR_LEFT)
-    draw_sprite_aligned(get_sprite_by_str("MonsterBack"),
-                        monster->pos_x, monster->pos_y,
-                        screen);
+  if (monster->type == MONSTER2)
+    {
+      if (monster->direction == DIR_RIGHT)
+	draw_sprite_aligned(get_sprite_by_str("Monster2"),
+			    monster->pos_x, monster->pos_y,
+			    screen);
+      else if (monster->direction == DIR_LEFT)
+	draw_sprite_aligned(get_sprite_by_str("MonsterBack2"),
+			    monster->pos_x, monster->pos_y,
+			    screen);
+    }
+  else
+    {
+      if (monster->direction == DIR_RIGHT)
+	draw_sprite_aligned(get_sprite_by_str("Monster"),
+			    monster->pos_x, monster->pos_y,
+			    screen);
+      else if (monster->direction == DIR_LEFT)
+	draw_sprite_aligned(get_sprite_by_str("MonsterBack"),
+			    monster->pos_x, monster->pos_y,
+			    screen);
+    }
+}
+
+void	draw_projectile(t_projectile* projectile, SDL_Surface* screen)
+{
+   draw_sprite_aligned(get_sprite_by_str("Projectile"),
+		       projectile->pos_x, projectile->pos_y,
+		       screen);
 }
 
 void	draw_gameobject(t_objlist* list, SDL_Surface* screen)

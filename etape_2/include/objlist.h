@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 13:21:49 2014 guerot_a
-** Last update Sun Mar  9 14:17:59 2014 guerot_a
+** Last update Sun Mar  9 14:50:11 2014 genes_k
 */
 
 #ifndef OBJLIST_H
@@ -26,6 +26,8 @@
 # define JUMP_STEP1	1
 # define JUMP_STEP2	2
 # define JUMP_STEP3	3
+# define MONSTER1	1
+# define MONSTER2	2
 
 typedef struct	s_mario
 {
@@ -58,6 +60,7 @@ typedef struct	s_monster
   int		pos_x;
   int		pos_y;
   int		direction;
+  int		type;
   Uint32	lasttime_walk;
 }		t_monster;
 

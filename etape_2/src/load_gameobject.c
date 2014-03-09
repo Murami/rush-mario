@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 13:15:52 2014 guerot_a
-** Last update Sun Mar  9 14:18:14 2014 guerot_a
+** Last update Sun Mar  9 14:52:50 2014 genes_k
 */
 
 #include "epikong.h"
@@ -14,6 +14,7 @@ t_pair_char_func	load_funcs[] =
   {
     {'i', &load_mario},
     {'m', &load_monster},
+    {'M', &load_monster2},
     {'\0', NULL}
   };
 
@@ -45,6 +46,20 @@ void	load_monster(int x, int y, t_objlist* objlist)
   monster = xmalloc(sizeof(t_monster));
   monster->pos_x = x;
   monster->pos_y = y;
+  monster->type = MONSTER1;
+  monster->lasttime_walk = 0;
+  monster->direction = DIR_RIGHT;
+  list_push_back(objlist->monster_list, monster);
+}
+
+void	load_monster2(int x, int y, t_objlist* objlist)
+{
+  t_monster*	monster;
+
+  monster = xmalloc(sizeof(t_monster));
+  monster->pos_x = x;
+  monster->pos_y = y;
+  monster->type = MONSTER2;
   monster->lasttime_walk = 0;
   monster->direction = DIR_RIGHT;
   list_push_back(objlist->monster_list, monster);
