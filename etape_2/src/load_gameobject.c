@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 13:15:52 2014 guerot_a
-** Last update Sat Mar  8 23:59:53 2014 guerot_a
+** Last update Sun Mar  9 00:47:30 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -19,8 +19,11 @@ void	load_mario(int x, int y, t_objlist* objlist)
   objlist->player.speed_fall = 1;
   objlist->player.lasttime_fall = 0;
   objlist->player.lasttime_jump = 0;
+  objlist->player.lasttime_walk = 0;
+  objlist->player.lasttime_die = 0;
   objlist->player.jumping = NOT_JUMPING;
   objlist->player.direction = DIR_RIGHT;
+  objlist->player.is_die = 0;
   objlist->player.key = 0;
   objlist->spawn.pos_x = x;
   objlist->spawn.pos_y = y;

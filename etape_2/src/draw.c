@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 13:52:17 2014 guerot_a
-** Last update Sat Mar  8 23:58:31 2014 guerot_a
+** Last update Sun Mar  9 00:59:45 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -40,6 +40,12 @@ void	draw_map(t_map* map, SDL_Surface* screen)
 
 void	draw_mario(t_mario* mario, SDL_Surface* screen)
 {
+  if (mario->is_die)
+    {
+      draw_sprite_aligned(get_sprite_by_str("Death"),
+			  mario->pos_x, mario->pos_y, screen);
+      return;
+    }
   if (mario->jumping != NOT_JUMPING)
     {
       if (mario->direction_jump == DIR_LEFT ||

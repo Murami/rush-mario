@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 13:21:49 2014 guerot_a
-** Last update Sat Mar  8 22:16:36 2014 guerot_a
+** Last update Sun Mar  9 00:43:41 2014 guerot_a
 */
 
 #ifndef OBJLIST_H
@@ -29,18 +29,21 @@
 
 typedef struct	s_mario
 {
-  int		life;
   int		pos_x;
   int		pos_y;
-  int		speed_fall;
+  int		life;
   int		equiped;
-  Uint32	lasttime_fall;
-  Uint32	lasttime_jump;
-  Uint32	lasttime_walk;
+  int		speed_fall;
+  int		fall_dist;
   int		direction;
   int		direction_jump;
   int		jumping;
   int		key;
+  int		is_die;
+  Uint32	lasttime_die;
+  Uint32	lasttime_fall;
+  Uint32	lasttime_jump;
+  Uint32	lasttime_walk;
 }		t_mario;
 
 typedef struct	s_spawn
