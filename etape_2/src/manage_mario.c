@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sun Mar  9 16:39:57 2014 guerot_a
-** Last update Sun Mar  9 17:04:39 2014 genes_k
+** Last update Sun Mar  9 17:49:29 2014 genes_k
 */
 
 #include "epikong.h"
@@ -42,13 +42,4 @@ void	mario_die(t_objlist* objlist)
   objlist->player.lasttime_die = SDL_GetTicks();
   objlist->player.is_die = 1;
   objlist->player.life--;
-}
-
-void	take_trap(t_map* map, t_objlist* objlist, int x, int y)
-{
-  (void)map;
-  (void)x;
-  (void)y;
-  if (!objlist->player.is_die)
-    mario_die(objlist);
 }

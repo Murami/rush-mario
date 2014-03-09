@@ -5,7 +5,7 @@
 ** Login   <sadows_g@epitech.net>
 **
 ** Started on  Sat Mar  8 21:40:59 2014 SADOWSKI Geoffroy
-** Last update Sun Mar  9 16:59:52 2014 genes_k
+** Last update Sun Mar  9 17:49:28 2014 genes_k
 */
 
 #include "epikong.h"
@@ -69,4 +69,13 @@ void	manage_game_check(t_map *map, t_objlist *objlist)
   if (!objlist->player.is_die)
     check_monster_collide(objlist);
   manage_projectile(map, objlist);
+}
+
+void	take_trap(t_map* map, t_objlist* objlist, int x, int y)
+{
+  (void)map;
+  (void)x;
+  (void)y;
+  if (!objlist->player.is_die)
+    mario_die(objlist);
 }
