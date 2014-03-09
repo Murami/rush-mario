@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Fri Mar  7 20:33:05 2014 guerot_a
-** Last update Sun Mar  9 14:21:30 2014 SADOWSKI Geoffroy
+** Last update Sun Mar  9 14:39:56 2014 SADOWSKI Geoffroy
 */
 
 #include "epikong.h"
@@ -131,7 +131,7 @@ void	load_ressources()
   load_sprites();
 }
 
-int	main(int ac, char** av)
+int	main()
 {
   load_ressources();
   epikong_menu();

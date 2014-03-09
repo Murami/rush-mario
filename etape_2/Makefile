@@ -5,7 +5,7 @@
 ## Login   <guerot_a@epitech.net>
 ## 
 ## Started on  Sun Mar  2 18:06:05 2014 anthony guerot
-## Last update Sun Mar  9 01:42:00 2014 guerot_a
+## Last update Sun Mar  9 14:10:01 2014 guerot_a
 ##
 
 ## FILES
@@ -14,7 +14,6 @@ NAME		=	epikong
 
 SRC		=	main			\
 			xabort			\
-			xfree			\
 			xmalloc			\
 			xSDL_LoadBMP		\
 			xSDL_SetVideoMode	\

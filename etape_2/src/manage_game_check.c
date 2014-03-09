@@ -5,13 +5,17 @@
 ** Login   <sadows_g@epitech.net>
 **
 ** Started on  Sat Mar  8 21:40:59 2014 SADOWSKI Geoffroy
-** Last update Sun Mar  9 13:57:13 2014 guerot_a
+** Last update Sun Mar  9 14:36:06 2014 guerot_a
 */
 
 #include "epikong.h"
 
 void	use_door(t_map* map, t_objlist* objlist, int x, int y)
 {
+  (void) map;
+  (void) x;
+  (void) y;
+
   objlist->cleared = objlist->player.key;
 }
 
@@ -70,6 +74,10 @@ void	check_monster_collide(t_objlist* objlist)
 	}
       it_incr(it);
     }
+}
+
+void	manage_projectile(t_map* map, t_objlist* objlist)
+{
 }
 
 void	manage_game_check(t_map *map, t_objlist *objlist)

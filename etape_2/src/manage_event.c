@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 15:01:46 2014 guerot_a
-** Last update Sun Mar  9 03:26:23 2014 guerot_a
+** Last update Sun Mar  9 14:14:40 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -19,6 +19,7 @@ t_event	events[] =
     {SDLK_KP6	, 0, 0, 0, &mario_right},
     {SDLK_KP8	, 0, 0, 0, &mario_up},
     {SDLK_KP5	, 0, 0, 0, &mario_down},
+    {SDLK_RETURN, 0, 0, 0, &mario_fire},
     {0, 0, 0, 0, NULL}
   };
 

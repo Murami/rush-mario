@@ -5,10 +5,17 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 13:15:52 2014 guerot_a
-** Last update Sun Mar  9 03:30:40 2014 guerot_a
+** Last update Sun Mar  9 14:18:14 2014 guerot_a
 */
 
 #include "epikong.h"
+
+t_pair_char_func	load_funcs[] =
+  {
+    {'i', &load_mario},
+    {'m', &load_monster},
+    {'\0', NULL}
+  };
 
 void	load_mario(int x, int y, t_objlist* objlist)
 {
@@ -21,6 +28,7 @@ void	load_mario(int x, int y, t_objlist* objlist)
   objlist->player.lasttime_jump = 0;
   objlist->player.lasttime_walk = 0;
   objlist->player.lasttime_die = 0;
+  objlist->player.lasttime_fire = 0;
   objlist->player.jumping = NOT_JUMPING;
   objlist->player.direction = DIR_RIGHT;
   objlist->player.is_die = 0;
@@ -41,13 +49,6 @@ void	load_monster(int x, int y, t_objlist* objlist)
   monster->direction = DIR_RIGHT;
   list_push_back(objlist->monster_list, monster);
 }
-
-t_pair_char_func	load_funcs[] =
-  {
-    {'i', &load_mario},
-    {'m', &load_monster},
-    {'\0', NULL}
-  };
 
 int	run_load(char k, int x, int y, t_objlist* objlist)
 {
@@ -72,6 +73,7 @@ void	load_gameobject(t_map* map, t_objlist* objlist)
   unsigned int	x;
 
   objlist->monster_list = list_create();
+  objlist->projectile_list = list_create();
   y = 0;
   while (y < map->height)
     {
