@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Fri Mar  7 21:47:03 2014 guerot_a
-** Last update Sun Mar  9 18:48:55 2014 guerot_a
+** Last update Sun Mar  9 21:16:46 2014 guerot_a
 */
 
 #ifndef EPIKONG_H
@@ -40,7 +40,7 @@
 # include "objlist.h"
 
 void		epikong_menu();
-int		run_stage(const char *filename);
+int		run_stage(const char *filename, int bossstage);
 
 /*
 ** x functions
@@ -55,6 +55,7 @@ SDL_Surface*	xSDL_SetVideoMode(int w, int h, int bpp, uint32_t flags);
 ** Load ressources
 */
 
+void		load_boss(int x, int y, t_objlist* objlist);
 void		load_mario(int x, int y, t_objlist* objlist);
 void		load_monster(int x, int y, t_objlist* objlist);
 void		load_monster2(int x, int y, t_objlist* objlist);
@@ -91,6 +92,7 @@ void		free_events();
 int		manage_event(t_map* map, t_objlist* objlist);
 void		manage_physics(t_map* map, t_objlist* objlist);
 void		manage_ia(t_map* map, t_objlist* objlist);
+void		run_boss_ia(t_map* map, t_objlist);
 void		manage_game_check(t_map *map, t_objlist *objlist);
 void		manage_game_check_xy(t_map *map, t_objlist *objlist, int x, int y);
 t_listit	monster_hit_projectile(t_objlist* objlist, t_listit monster_it);
@@ -114,15 +116,33 @@ void		mario_takekey(t_map* map, t_objlist* objlist);
 void		mario_die(t_objlist* objlist);
 void		mario_fire(t_map* map, t_objlist* objlist);
 
+int		boss_manage_walk_time(t_objlist* objlist);
+int		boss_can_walk(t_map* map, int x, int y);
+void		boss_left(t_map* map, t_objlist* objlist);
+void		boss_right(t_map* map, t_objlist* objlist);
+void		boss_up(t_map* map, t_objlist* objlist);
+void		boss_down(t_map* map, t_objlist* objlist);
+void		boss_jump(t_map* map, t_objlist* objlist);
+void		boss_jump_left(t_map* map, t_objlist* objlist);
+void		boss_jump_right(t_map* map, t_objlist* objlist);
+void		boss_jumping(t_map* map, t_objlist* objlist);
+void		boss_takekey(t_map* map, t_objlist* objlist);
+void		boss_die(t_objlist* objlist);
+void		boss_fire(t_map* map, t_objlist* objlist);
+
+
 /*
 ** Interactions with game objects
 */
 
 void		take_gun(t_map* map, t_objlist* list, int x, int y);
 void		take_life(t_map* map, t_objlist* list, int x, int y);
+void		bosstake_gun(t_map* map, t_objlist* list, int x, int y);
+void		bosstake_life(t_map* map, t_objlist* list, int x, int y);
 void		take_key(t_map* map, t_objlist* list, int x, int y);
 void		use_door(t_map* map, t_objlist* list, int x, int y);
 void		take_trap(t_map* map, t_objlist* list, int x, int y);
+
 /*
 ** Utility
 */

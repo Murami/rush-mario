@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 13:15:52 2014 guerot_a
-** Last update Sun Mar  9 18:35:54 2014 guerot_a
+** Last update Sun Mar  9 20:30:50 2014 guerot_a
 */
 
 #include "epikong.h"
@@ -15,6 +15,7 @@ const t_pair_char_func	load_funcs[] =
     {'i', &load_mario},
     {'m', &load_monster},
     {'M', &load_monster2},
+    {'B', &load_boss},
     {'\0', NULL}
   };
 
