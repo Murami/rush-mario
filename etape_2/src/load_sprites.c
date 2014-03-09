@@ -5,7 +5,7 @@
 ** Login   <guerot_a@epitech.net>
 **
 ** Started on  Sat Mar  8 00:11:15 2014 guerot_a
-** Last update Sun Mar  9 14:30:44 2014 guerot_a
+** Last update Sun Mar  9 14:45:03 2014 genes_k
 */
 
 #include "epikong.h"
@@ -34,6 +34,8 @@ t_spritepair sprites[] =
     {'l', "Life", NULL},
     {'g', "Gun", NULL},
     {'p', "Projectile", NULL},
+    {'M', "Monster2", NULL},
+    {'M', "MonsterBack2", NULL},
     {'\0', "", NULL}
   };
 
@@ -72,6 +74,8 @@ void	load_sprites()
   sprites[18].img = xSDL_LoadBMP("Sprites/Mario_Death.bmp");
   sprites[19].img = xSDL_LoadBMP("Sprites/Life.bmp");
   sprites[20].img = xSDL_LoadBMP("Sprites/Life.bmp");//Here is GUN !
-  sprites[20].img = xSDL_LoadBMP("Sprites/Key.bmp");//Here is GUN !
+  sprites[21].img = xSDL_LoadBMP("Sprites/Key.bmp");//Here is GUN !
+  sprites[22].img = xSDL_LoadBMP("Sprites/Monster.bmp");
+  sprites[23].img = xSDL_LoadBMP("Sprites/Monster_Back.bmp");
   set_alpha();
 }
