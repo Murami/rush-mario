@@ -5,7 +5,7 @@
 ** Login   <sadows_g@epitech.net>
 **
 ** Started on  Sat Mar  8 21:40:59 2014 SADOWSKI Geoffroy
-** Last update Sun Mar  9 16:52:12 2014 genes_k
+** Last update Sun Mar  9 16:59:52 2014 genes_k
 */
 
 #include "epikong.h"
@@ -16,6 +16,7 @@ const t_gameaction	actions[] =
     {'l', take_life},
     {'g', take_gun},
     {'o', use_door},
+    {'t', take_trap},
     {'\0', NULL}
   };
 
